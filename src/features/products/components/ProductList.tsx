@@ -1,6 +1,8 @@
 import { SimpleGrid } from '@mantine/core';
-import ProductCard from './ProductCard.view';
+
 import { Product } from '@/features/products/types';
+
+import ProductCard from './ProductCard';
 
 const ProductList = ({
   products,
@@ -10,7 +12,7 @@ const ProductList = ({
   onItemClick?: (_id: number) => void;
 }) => {
   return (
-    <SimpleGrid cols={{ base: 1,xs:2, md: 3, lg: 4 }} spacing="md">
+    <SimpleGrid cols={{ base: 1, xs: 2, md: 3, lg: 4 }} spacing="md">
       {products.map((p) => (
         <ProductCard
           key={p.id}

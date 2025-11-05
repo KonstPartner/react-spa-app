@@ -9,7 +9,7 @@ const useSchemeTokens = () => {
     navBarBg: scheme === 'dark' ? 'dark.7' : 'orange.4',
     text: scheme === 'dark' ? 'gray.8' : 'gray.2',
     link: scheme === 'dark' ? 'gray.8' : 'gray.3',
-    linkActive: scheme === 'dark' ? 'gray.9' : 'gray.1',
+    linkActive: scheme === 'dark' ? 'gray.7' : 'gray.1',
   };
 };
 
