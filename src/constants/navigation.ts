@@ -1,3 +1,1 @@
-export const NAV_LINKS = [
-  { path: '/', label: 'Catalog' },
-];
+export const NAV_LINKS = [{ path: '/', label: 'Catalog' }];
