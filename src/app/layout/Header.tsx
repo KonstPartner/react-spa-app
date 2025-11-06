@@ -5,6 +5,7 @@ import useSchemeTokens from '@/lib/hooks/useSchemeTokens';
 
 import NavItem from './NavItem';
 import ToggleTheme from './ToggleTheme';
+import CartIndicator from './CartIndicator';
 
 const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
   const { headerBg, text } = useSchemeTokens();
@@ -18,6 +19,10 @@ const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
           </Text>
 
           <Group gap={20}>
+            <Group hiddenFrom="sm">
+              <CartIndicator />
+            </Group>
+
             <Burger onClick={onBurgerClick} hiddenFrom="sm" />
             <Group visibleFrom="sm">
               {NAV_LINKS.map(({ path, label }) => (
@@ -25,6 +30,7 @@ const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
                   {label}
                 </NavItem>
               ))}
+              <CartIndicator />
             </Group>
 
             <Container visibleFrom="sm">
