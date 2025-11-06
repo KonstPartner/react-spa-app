@@ -1,11 +1,47 @@
+export type Review = {
+  rating: number;
+  comment: string;
+  date: string;
+  reviewerName: string;
+  reviewerEmail: string;
+};
+
+export type Dimensions = {
+  width: number;
+  height: number;
+  depth: number;
+};
+
+export type Meta = {
+  createdAt: string;
+  updatedAt: string;
+  barcode: string;
+  qrCode: string;
+};
+
 export type Product = {
-  id: number;
   title: string;
+  description: string;
   category: string;
-  price: number;
+  tags: string[];
+  brand: string;
+  sku: string;
+  availabilityStatus: string;
+  stock: number;
+  minimumOrderQuantity: number;
   discountPercentage?: number;
   rating: number;
-  thumbnail?: string;
+  price: number;
+  id: number;
+  weight: number;
+  dimensions: Dimensions;
+  warrantyInformation: string;
+  shippingInformation: string;
+  reviews: Review[];
+  returnPolicy: string;
+  meta: Meta;
+  images: string[];
+  thumbnail: string;
 };
 
 export type ProductsResponse = {

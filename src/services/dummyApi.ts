@@ -2,9 +2,10 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import {
   DYMMI_API_BASE_URL,
+  DYMMI_API_PRODUCTS_PATH,
   getProductsEndpointWithQuery,
 } from '@/constants/dymmiApi';
-import { ProductsResponse } from '@/features/products/types';
+import { Product, ProductsResponse } from '@/features/products/types';
 
 export const dummyApi = createApi({
   reducerPath: 'dummyApi',
@@ -34,7 +35,10 @@ export const dummyApi = createApi({
       forceRefetch: ({ currentArg, previousArg }) =>
         currentArg?.skip !== previousArg?.skip,
     }),
+    getProductById: builder.query<Product, number>({
+      query: (id) => DYMMI_API_PRODUCTS_PATH + `/${id}`,
+    }),
   }),
 });
 
-export const { useGetProductsQuery } = dummyApi;
+export const { useGetProductsQuery, useGetProductByIdQuery } = dummyApi;

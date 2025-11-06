@@ -25,9 +25,7 @@ const ProductCard = ({
     >
       <Stack justify="space-between">
         <Group>
-          {thumbnail && (
-            <Image src={thumbnail} alt={title} radius="sm" fit="cover" />
-          )}
+          <Image src={thumbnail} alt={title} radius="sm" fit="cover" />
 
           <Text fw={600} h={50} lineClamp={2}>
             {title}
@@ -42,7 +40,7 @@ const ProductCard = ({
           <Group gap="xs">
             {hasDiscount ? (
               <>
-                <Text td="line-through" c="dimmed" size="sm">
+                <Text td="line-through" size="sm">
                   ${price.toFixed(2)}
                 </Text>
                 <Text fw={700}>${finalPrice.toFixed(2)}</Text>
@@ -57,9 +55,7 @@ const ProductCard = ({
 
           <Group gap="xs">
             <Rating value={rating} fractions={2} readOnly size="sm" />
-            <Text size="sm" c="dimmed">
-              {rating.toFixed(2)}
-            </Text>
+            <Text size="sm">{rating.toFixed(2)}</Text>
           </Group>
         </Stack>
       </Stack>
