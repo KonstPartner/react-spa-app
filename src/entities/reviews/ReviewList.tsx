@@ -1,6 +1,7 @@
 import { ReviewCard } from '@entities/reviews';
-import { Review } from '@features/products/model/types';
 import { Divider, Stack } from '@mantine/core';
+
+import { Review } from '@/features/reviews/modal';
 
 const ReviewList = ({ reviews }: { reviews: Review[] }) => {
   return (

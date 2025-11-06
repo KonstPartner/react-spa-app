@@ -1,5 +1,5 @@
 import { ReviewList } from '@entities/reviews';
-import type { Review } from '@features/products/model/types';
+import { Review } from '@features/reviews/modal';
 import { Box, Paper, Text, Title } from '@mantine/core';
 
 const Reviews = ({ reviews }: { reviews?: Review[] }) => {
