@@ -1,21 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { CartState } from './types';
 
-const initialState: CartState = {
-  items: {},
-};
+import type { CartItem, CartState } from './types';
+
+const initialState: CartState = { items: {} };
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addItem(state, action: PayloadAction<{ id: number; qty?: number }>) {
-      const { id, qty = 1 } = action.payload;
+    addItem(
+      state,
+      action: PayloadAction<Omit<CartItem, 'qty'> & { qty?: number }>
+    ) {
+      const { id, qty = 1, ...rest } = action.payload;
       const existing = state.items[id];
       if (existing) {
         existing.qty += qty;
       } else {
-        state.items[id] = { id, qty };
+        state.items[id] = { id, qty, ...rest };
       }
     },
     removeItem(state, action: PayloadAction<{ id: number }>) {
@@ -25,9 +27,8 @@ const cartSlice = createSlice({
       const { id, qty } = action.payload;
       if (qty <= 0) {
         delete state.items[id];
-      } else {
-        const existing = state.items[id];
-        state.items[id] = { id, qty: existing ? qty : qty };
+      } else if (state.items[id]) {
+        state.items[id]!.qty = qty;
       }
     },
     clearCart(state) {

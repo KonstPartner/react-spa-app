@@ -1,15 +1,15 @@
 import { Box, Divider, Grid, Group, Image, Paper, Stack } from '@mantine/core';
 
+import CartWidget from '@/features/cart/component/CartWidget';
 import type { Product } from '@/features/products/types';
 import Reviews from '@/features/reviews/Reviews';
 
 import ProductAdditional from './ProductAdditional';
 import ProductDetailsTable from './ProductDetailsTable';
 import ProductInfo from './ProductInfo';
-import AddToCartButton from '@/features/cart/component/addToCartButton';
 
 export default function ProductDetails({ product }: { product: Product }) {
-  const { id, title, thumbnail, reviews } = product;
+  const { title, thumbnail, reviews } = product;
 
   return (
     <Box w={{ base: '80%', sm: '70%', lg: '100%' }}>
@@ -32,8 +32,8 @@ export default function ProductDetails({ product }: { product: Product }) {
           </Grid.Col>
         </Grid>
 
-        <Box mx='auto'>
-          <AddToCartButton id={id} />
+        <Box mx="auto">
+          <CartWidget item={product} />
         </Box>
 
         <Divider label="Specifications" />

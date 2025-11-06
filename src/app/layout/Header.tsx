@@ -3,9 +3,9 @@ import { Burger, Container, Group, Paper, Text } from '@mantine/core';
 import { NAV_LINKS } from '@/constants/navigation';
 import useSchemeTokens from '@/lib/hooks/useSchemeTokens';
 
+import CartIndicator from './CartIndicator';
 import NavItem from './NavItem';
 import ToggleTheme from './ToggleTheme';
-import CartIndicator from './CartIndicator';
 
 const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
   const { headerBg, text } = useSchemeTokens();
