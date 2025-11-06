@@ -5,6 +5,7 @@ import AppLayout from './layout/AppLayout';
 
 const Home = lazy(() => import('@/pages/Home'));
 const Product = lazy(() => import('@/pages/Product'));
+const Cart = lazy(() => import('@/pages/Cart'));
 
 const router = createBrowserRouter(
   [
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
       children: [
         { index: true, element: <Home /> },
         { path: 'products/:id', element: <Product /> },
+        { path: 'cart', element: <Cart /> },
       ],
     },
   ],

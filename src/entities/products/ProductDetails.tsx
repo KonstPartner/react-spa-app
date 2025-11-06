@@ -1,5 +1,6 @@
 import { Box, Divider, Grid, Group, Image, Paper, Stack } from '@mantine/core';
 
+import CartWidget from '@/features/cart/component/CartWidget';
 import type { Product } from '@/features/products/types';
 import Reviews from '@/features/reviews/Reviews';
 
@@ -30,6 +31,10 @@ export default function ProductDetails({ product }: { product: Product }) {
             <ProductInfo productInfo={product} />
           </Grid.Col>
         </Grid>
+
+        <Box mx="auto">
+          <CartWidget item={product} />
+        </Box>
 
         <Divider label="Specifications" />
 

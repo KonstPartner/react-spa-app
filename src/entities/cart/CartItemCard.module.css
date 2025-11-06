@@ -1,0 +1,19 @@
+.CartItemCard {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .CartItemCard {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 370px) {
+  .CartItemCard {
+    flex-direction: column;
+  }
+}
