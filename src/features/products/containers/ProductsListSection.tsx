@@ -1,9 +1,9 @@
 import { Box, Loader, Stack, Text } from '@mantine/core';
 import { RefObject } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import ProductList from '@/entities/products/ProductList';
 import { Product } from '@/features/products/types';
-
-import ProductList from '../components/ProductList';
 
 const ProductsListSection = ({
   products,
@@ -18,6 +18,8 @@ const ProductsListSection = ({
   canLoadMore: boolean;
   sentinelRef: RefObject<HTMLDivElement | null>;
 }) => {
+  const navigate = useNavigate();
+
   if (isLoading && products.length === 0) {
     return (
       <Stack align="center" py="xl">
@@ -33,7 +35,10 @@ const ProductsListSection = ({
       w={{ base: '40%', xs: '80%', sm: '60%', md: '80%', lg: '100%' }}
     >
       <>
-        <ProductList products={products} />
+        <ProductList
+          products={products}
+          onItemClick={(id: number) => navigate(`/products/${id}`)}
+        />
         <div ref={sentinelRef} style={{ height: 1 }} />
 
         {isFetching && (
