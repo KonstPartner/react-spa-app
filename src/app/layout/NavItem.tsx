@@ -14,12 +14,11 @@ const NavItem = ({
   children: ReactNode;
   onClick?: () => void;
 }) => {
-  const { link, linkActive } = useSchemeTokens();
+  const { text } = useSchemeTokens();
   const theme = useMantineTheme();
 
   const colorVars = {
-    '--link-color': getColor(theme, link),
-    '--link-active': getColor(theme, linkActive),
+    '--link-color': getColor(theme, text),
   } as CSSProperties;
 
   return (

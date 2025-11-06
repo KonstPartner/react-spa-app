@@ -5,10 +5,10 @@ import { NAV_LINKS } from '@/constants';
 import { useSchemeTokens } from '@/shared/hooks';
 
 export default function SideNav({ onNavigate }: { onNavigate: () => void }) {
-  const { navBarBg } = useSchemeTokens();
+  const { headerBg } = useSchemeTokens();
 
   return (
-    <ScrollArea style={{ height: '100%' }} p="md" bg={navBarBg}>
+    <ScrollArea style={{ height: '100%' }} p="md" bg={headerBg}>
       <Stack align="center" mx="auto" miw={200} w="70%">
         <ToggleTheme />
 
