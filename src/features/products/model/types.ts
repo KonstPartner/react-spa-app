@@ -1,10 +1,4 @@
-export type Review = {
-  rating: number;
-  comment: string;
-  date: string;
-  reviewerName: string;
-  reviewerEmail: string;
-};
+import { Review } from '@/features/reviews/modal';
 
 export type Dimensions = {
   width: number;

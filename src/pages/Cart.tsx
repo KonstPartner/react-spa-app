@@ -1,28 +1,24 @@
-import { Container, Stack, Text, Title } from '@mantine/core';
+import { selectCartItems } from '@features/cart/model';
+import { CartMenu } from '@features/cart/ui';
+import { Stack, Text } from '@mantine/core';
 
-import { useAppSelector } from '@/app/hooks';
-import CartMenu from '@/features/cart/container/CartMenu';
-import { selectCartItems } from '@/features/cart/selectors';
+import { useAppSelector } from '@/app';
 
 const Cart = () => {
   const items = useAppSelector(selectCartItems);
 
   if (items.length === 0) {
     return (
-      <Container py="lg">
-        <Title order={2}>Cart</Title>
+      <Stack>
+        <h1>Cart</h1>
         <Stack align="center">
           <Text>Your cart is empty.</Text>
         </Stack>
-      </Container>
+      </Stack>
     );
   }
 
-  return (
-    <Container size="lg">
-      <CartMenu />
-    </Container>
-  );
+  return <CartMenu />;
 };
 
 export default Cart;

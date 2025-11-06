@@ -1,10 +1,8 @@
+import { NavItem, ToggleTheme } from '@app/layout';
 import { ScrollArea, Stack } from '@mantine/core';
 
-import { NAV_LINKS } from '@/constants/navigation';
-import useSchemeTokens from '@/lib/hooks/useSchemeTokens';
-
-import NavItem from './NavItem';
-import ToggleTheme from './ToggleTheme';
+import { NAV_LINKS } from '@/constants';
+import { useSchemeTokens } from '@/shared/hooks';
 
 export default function SideNav({ onNavigate }: { onNavigate: () => void }) {
   const { navBarBg } = useSchemeTokens();

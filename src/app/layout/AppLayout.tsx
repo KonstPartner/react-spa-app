@@ -1,9 +1,7 @@
-import { AppShell } from '@mantine/core';
+import { Header, SideNav } from '@app/layout';
+import { AppShell, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Outlet } from 'react-router-dom';
-
-import Header from './Header';
-import SideNav from './SideNav';
 
 export default function AppLayout() {
   const [opened, { toggle, close }] = useDisclosure(false);
@@ -26,7 +24,9 @@ export default function AppLayout() {
       </AppShell.Navbar>
 
       <AppShell.Main>
-        <Outlet />
+        <Container size="lg" py="lg">
+          <Outlet />
+        </Container>
       </AppShell.Main>
     </AppShell>
   );

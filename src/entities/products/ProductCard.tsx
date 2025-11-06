@@ -1,7 +1,15 @@
-import { Badge, Card, Group, Image, Rating, Stack, Text } from '@mantine/core';
-
-import type { Product } from '@/features/products/types';
-import { getFinalPrice } from '@/features/products/utils/price';
+import type { Product } from '@features/products/model';
+import {
+  Badge,
+  Box,
+  Card,
+  Group,
+  Image,
+  Rating,
+  Stack,
+  Text,
+} from '@mantine/core';
+import { getFinalPrice } from '@shared/utils';
 
 const ProductCard = ({
   product,
@@ -25,7 +33,9 @@ const ProductCard = ({
     >
       <Stack justify="space-between">
         <Group>
-          <Image src={thumbnail} alt={title} radius="sm" fit="cover" />
+          <Box w={{ sm: '100%' }} mx="auto">
+            <Image src={thumbnail} alt={title} radius="sm" fit="cover" />
+          </Box>
 
           <Text fw={600} h={50} lineClamp={2}>
             {title}

@@ -1,11 +1,9 @@
+import classes from '@app/layout/NavItem.module.css';
 import { useMantineTheme } from '@mantine/core';
+import { useSchemeTokens } from '@shared/hooks';
+import { getColor } from '@shared/utils';
 import { CSSProperties, ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
-
-import useSchemeTokens from '@/lib/hooks/useSchemeTokens';
-import getColor from '@/lib/utils/getThemeColor';
-
-import classes from './NavItem.module.css';
 
 const NavItem = ({
   path,

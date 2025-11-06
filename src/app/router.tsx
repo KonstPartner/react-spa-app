@@ -1,7 +1,6 @@
+import { AppLayout } from '@app/layout';
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-import AppLayout from './layout/AppLayout';
 
 const Home = lazy(() => import('@/pages/Home'));
 const Product = lazy(() => import('@/pages/Product'));

@@ -1,6 +1,6 @@
 import { Avatar, Group, Rating, Stack, Text } from '@mantine/core';
 
-import { Review } from '@/features/products/types';
+import { Review } from '@/features/reviews/modal';
 
 const ReviewCard = ({ review }: { review: Review }) => {
   return (

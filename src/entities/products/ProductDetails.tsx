@@ -1,18 +1,18 @@
+import {
+  ProductAdditional,
+  ProductDetailsTable,
+  ProductInfo,
+} from '@entities/products';
+import { CartWidget } from '@features/cart/ui';
+import type { Product } from '@features/products/model';
+import { Reviews } from '@features/reviews/ui';
 import { Box, Divider, Grid, Group, Image, Paper, Stack } from '@mantine/core';
-
-import CartWidget from '@/features/cart/component/CartWidget';
-import type { Product } from '@/features/products/types';
-import Reviews from '@/features/reviews/Reviews';
-
-import ProductAdditional from './ProductAdditional';
-import ProductDetailsTable from './ProductDetailsTable';
-import ProductInfo from './ProductInfo';
 
 export default function ProductDetails({ product }: { product: Product }) {
   const { title, thumbnail, reviews } = product;
 
   return (
-    <Box w={{ base: '80%', sm: '70%', lg: '100%' }}>
+    <Box w={{ base: '100%', sm: '70%', lg: '100%' }}>
       <Stack gap="lg">
         <Grid gutter="lg">
           <Grid.Col span={{ base: 12, md: 6 }}>

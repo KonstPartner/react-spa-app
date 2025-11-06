@@ -1,8 +1,8 @@
+import { ProductDetails } from '@entities/products';
 import { Container, Group, Loader, Stack, Text } from '@mantine/core';
 import { useParams } from 'react-router-dom';
 
-import ProductDetails from '@/entities/products/ProductDetails';
-import { useGetProductByIdQuery } from '@/services/dummyApi';
+import { useGetProductByIdQuery } from '@/services';
 
 const Product = () => {
   const { id } = useParams<{ id: string }>();
@@ -34,11 +34,12 @@ const Product = () => {
   }
 
   return (
-    <Container size="lg" py="xl">
+    <Stack>
+      <h1>Product</h1>
       <Group justify="center">
         <ProductDetails product={product} />
       </Group>
-    </Container>
+    </Stack>
   );
 };
 

@@ -1,10 +1,8 @@
+import { useAppDispatch } from '@app/hooks';
+import { removeItem, setQuantity } from '@features/cart/model/slice';
+import { CartItem } from '@features/cart/model/types';
 import { ActionIcon, Button, Group, Tooltip } from '@mantine/core';
 import { Minus, Plus, Trash } from 'lucide-react';
-
-import { useAppDispatch } from '@/app/hooks';
-import { removeItem, setQuantity } from '@/features/cart/slice';
-
-import { CartItem } from '../types';
 
 const CartOperations = ({
   item,

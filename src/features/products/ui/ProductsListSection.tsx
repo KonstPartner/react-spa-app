@@ -1,9 +1,8 @@
+import { ProductList } from '@entities/products';
+import { Product } from '@features/products/model';
 import { Box, Loader, Stack, Text } from '@mantine/core';
 import { RefObject } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import ProductList from '@/entities/products/ProductList';
-import { Product } from '@/features/products/types';
 
 const ProductsListSection = ({
   products,
@@ -32,7 +31,7 @@ const ProductsListSection = ({
   return (
     <Box
       miw={250}
-      w={{ base: '40%', xs: '80%', sm: '60%', md: '80%', lg: '100%' }}
+      w={{ base: '100%', xs: '80%', sm: '60%', md: '80%', lg: '100%' }}
     >
       <>
         <ProductList

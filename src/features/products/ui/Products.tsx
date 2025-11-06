@@ -1,9 +1,8 @@
+import { ProductsListSection } from '@features/products/ui';
 import { Text } from '@mantine/core';
 import { useEffect, useRef, useState } from 'react';
 
-import { useGetProductsQuery } from '@/services/dummyApi';
-
-import ProductsListSection from './ProductsListSection';
+import { useGetProductsQuery } from '@/services';
 
 const LIMIT = 50;
 

@@ -1,9 +1,8 @@
-import { useAppSelector } from '@/app/hooks';
+import { selectCartItemQty } from '@features/cart/model/selectors';
+import { CartItem } from '@features/cart/model/types';
+import { AddToCardButton, CartOperations } from '@features/cart/ui/';
 
-import { selectCartItemQty } from '../selectors';
-import { CartItem } from '../types';
-import AddToCardButton from './AddToCardButton';
-import CartOperations from './CartOperations';
+import { useAppSelector } from '@/app';
 
 const CartWidget = ({ item }: { item: Omit<CartItem, 'qty'> }) => {
   const qty = useAppSelector(selectCartItemQty(item.id));

@@ -1,10 +1,8 @@
-import { Card, Group, Image, Stack, Text, Title } from '@mantine/core';
-
-import { getFinalPrice } from '@/features/products/utils/price';
-
-import CartWidget from '../../features/cart/component/CartWidget';
-import type { CartItem } from '../../features/cart/types';
-import classes from './CartItemCard.module.css';
+import classes from '@entities/cart/CartItemCard.module.css';
+import { CartItem } from '@features/cart/model';
+import { CartWidget } from '@features/cart/ui';
+import { Box, Card, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { getFinalPrice } from '@shared/utils';
 
 const CartItemCard = ({ item }: { item: CartItem }) => {
   const { title, category, price, discountPercentage, rating, thumbnail, qty } =
@@ -14,9 +12,11 @@ const CartItemCard = ({ item }: { item: CartItem }) => {
 
   return (
     <Card withBorder radius="md" p="md">
-      <Group justify="space-between">
+      <Group justify="space-between" gap="lg">
         <Group>
-          <Image src={thumbnail} alt={title} w={96} h={96} radius="md" />
+          <Box w={{ base: 250, xs: 96 }}>
+            <Image src={thumbnail} alt={title} radius="md" />
+          </Box>
 
           <Stack gap={4}>
             <Title order={4} lineClamp={2}>
