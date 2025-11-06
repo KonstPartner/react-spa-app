@@ -12,7 +12,7 @@ export default function ProductDetails({ product }: { product: Product }) {
   const { title, thumbnail, reviews } = product;
 
   return (
-    <Box w={{ base: '80%', sm: '70%', lg: '100%' }}>
+    <Box w={{ base: '100%', sm: '70%', lg: '100%' }}>
       <Stack gap="lg">
         <Grid gutter="lg">
           <Grid.Col span={{ base: 12, md: 6 }}>

@@ -34,11 +34,12 @@ const Product = () => {
   }
 
   return (
-    <Container size="lg" py="xl">
+    <Stack>
+      <h1>Product</h1>
       <Group justify="center">
         <ProductDetails product={product} />
       </Group>
-    </Container>
+    </Stack>
   );
 };
 

@@ -1,7 +1,7 @@
 import { ScrollArea, Stack } from '@mantine/core';
 
 import { NAV_LINKS } from '@/constants/navigation';
-import useSchemeTokens from '@/lib/hooks/useSchemeTokens';
+import useSchemeTokens from '@/shared/hooks/useSchemeTokens';
 
 import NavItem from './NavItem';
 import ToggleTheme from './ToggleTheme';

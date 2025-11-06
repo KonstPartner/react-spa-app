@@ -1,17 +1,15 @@
-import { Container, Group, Title } from '@mantine/core';
+import { Group, Stack } from '@mantine/core';
 
 import Products from '@/features/products/containers/Products';
 
 const Home = () => {
   return (
-    <Container size="lg" py="lg">
-      <Title order={2} mb="md">
-        Catalog
-      </Title>
+    <Stack>
+      <h1>Catalog</h1>
       <Group justify="center">
         <Products />
       </Group>
-    </Container>
+    </Stack>
   );
 };
 

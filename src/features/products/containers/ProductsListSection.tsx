@@ -32,7 +32,7 @@ const ProductsListSection = ({
   return (
     <Box
       miw={250}
-      w={{ base: '40%', xs: '80%', sm: '60%', md: '80%', lg: '100%' }}
+      w={{ base: '100%', xs: '80%', sm: '60%', md: '80%', lg: '100%' }}
     >
       <>
         <ProductList

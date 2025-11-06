@@ -1,11 +1,12 @@
 import { Burger, Container, Group, Paper, Text } from '@mantine/core';
 
 import { NAV_LINKS } from '@/constants/navigation';
-import useSchemeTokens from '@/lib/hooks/useSchemeTokens';
+import useSchemeTokens from '@/shared/hooks/useSchemeTokens';
 
 import CartIndicator from './CartIndicator';
 import NavItem from './NavItem';
 import ToggleTheme from './ToggleTheme';
+import { Link } from 'react-router-dom';
 
 const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
   const { headerBg, text } = useSchemeTokens();
@@ -14,9 +15,11 @@ const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
     <Paper shadow="sm" radius={0} bg={headerBg}>
       <Container py="sm" size="lg">
         <Group justify="space-between" align="center">
-          <Text c={text} fw={800} fz="h2">
-            Goods Shop
-          </Text>
+          <Link to={'/'}>
+            <Text c={text} fw={800} fz="h2">
+              Goods Shop
+            </Text>
+          </Link>
 
           <Group gap={20}>
             <Group hiddenFrom="sm">

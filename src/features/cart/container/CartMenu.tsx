@@ -19,7 +19,7 @@ const CartMenu = () => {
   return (
     <Box mx="auto" w={{ xs: '80%' }} py="lg">
       <Group justify="space-between" align="center" mb="md">
-        <Title order={2}>Cart ({totalCount})</Title>
+        <h1>Cart ({totalCount})</h1>
         <Button
           color="red"
           variant="light"

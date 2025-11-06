@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useAppSelector } from '@/app/hooks';
 import { selectCartTotalCount } from '@/features/cart/selectors';
-import useSchemeTokens from '@/lib/hooks/useSchemeTokens';
+import useSchemeTokens from '@/shared/hooks/useSchemeTokens';
 
 const CartIndicator = () => {
   const count = useAppSelector(selectCartTotalCount);
