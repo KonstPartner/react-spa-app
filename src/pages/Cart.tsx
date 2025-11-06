@@ -1,8 +1,8 @@
+import { selectCartItems } from '@features/cart/model';
+import { CartMenu } from '@features/cart/ui';
 import { Stack, Text } from '@mantine/core';
 
-import { useAppSelector } from '@/app/hooks';
-import CartMenu from '@/features/cart/container/CartMenu';
-import { selectCartItems } from '@/features/cart/selectors';
+import { useAppSelector } from '@/app';
 
 const Cart = () => {
   const items = useAppSelector(selectCartItems);

@@ -1,8 +1,6 @@
+import { ProductCard } from '@entities/products';
+import { Product } from '@features/products/model/types';
 import { SimpleGrid } from '@mantine/core';
-
-import { Product } from '@/features/products/types';
-
-import ProductCard from './ProductCard';
 
 const ProductList = ({
   products,

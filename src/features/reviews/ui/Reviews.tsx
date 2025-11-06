@@ -1,7 +1,6 @@
+import { ReviewList } from '@entities/reviews';
+import type { Review } from '@features/products/model/types';
 import { Box, Paper, Text, Title } from '@mantine/core';
-
-import ReviewList from '@/entities/reviews/ReviewList';
-import type { Review } from '@/features/products/types';
 
 const Reviews = ({ reviews }: { reviews?: Review[] }) => {
   if (!reviews || reviews.length === 0) {

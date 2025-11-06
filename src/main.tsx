@@ -8,9 +8,7 @@ import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import AppRouter from './app/router';
-import { store } from './app/store';
-import { theme } from './app/theme';
+import { AppRouter, store, theme } from '@/app';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>

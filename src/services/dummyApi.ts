@@ -1,15 +1,15 @@
+import { Product, ProductsResponse } from '@features/products/model';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import {
-  DYMMI_API_BASE_URL,
-  DYMMI_API_PRODUCTS_PATH,
+  DUMMY_API_BASE_URL,
+  DUMMY_API_PRODUCTS_PATH,
   getProductsEndpointWithQuery,
-} from '@/constants/dymmiApi';
-import { Product, ProductsResponse } from '@/features/products/types';
+} from '@/constants';
 
 export const dummyApi = createApi({
   reducerPath: 'dummyApi',
-  baseQuery: fetchBaseQuery({ baseUrl: DYMMI_API_BASE_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: DUMMY_API_BASE_URL }),
   endpoints: (builder) => ({
     getProducts: builder.query<
       ProductsResponse,
@@ -36,7 +36,7 @@ export const dummyApi = createApi({
         currentArg?.skip !== previousArg?.skip,
     }),
     getProductById: builder.query<Product, number>({
-      query: (id) => DYMMI_API_PRODUCTS_PATH + `/${id}`,
+      query: (id) => DUMMY_API_PRODUCTS_PATH + `/${id}`,
     }),
   }),
 });

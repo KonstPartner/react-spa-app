@@ -1,3 +1,4 @@
+import type { Product } from '@features/products/model';
 import {
   Badge,
   Box,
@@ -8,9 +9,7 @@ import {
   Stack,
   Text,
 } from '@mantine/core';
-
-import type { Product } from '@/features/products/types';
-import { getFinalPrice } from '@/shared/utils/getFinalPrice';
+import { getFinalPrice } from '@shared/utils';
 
 const ProductCard = ({
   product,

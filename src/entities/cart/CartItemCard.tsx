@@ -1,10 +1,8 @@
+import classes from '@entities/cart/CartItemCard.module.css';
+import { CartItem } from '@features/cart/model';
+import { CartWidget } from '@features/cart/ui';
 import { Box, Card, Group, Image, Stack, Text, Title } from '@mantine/core';
-
-import { getFinalPrice } from '@/shared/utils/getFinalPrice';
-
-import CartWidget from '../../features/cart/component/CartWidget';
-import type { CartItem } from '../../features/cart/types';
-import classes from './CartItemCard.module.css';
+import { getFinalPrice } from '@shared/utils';
 
 const CartItemCard = ({ item }: { item: CartItem }) => {
   const { title, category, price, discountPercentage, rating, thumbnail, qty } =

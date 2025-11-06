@@ -4,6 +4,7 @@ const useSchemeTokens = () => {
   const scheme = useComputedColorScheme('light', {
     getInitialValueInEffect: true,
   });
+
   return {
     headerBg: scheme === 'dark' ? 'orange.6' : 'orange.5',
     navBarBg: scheme === 'dark' ? 'dark.7' : 'orange.4',

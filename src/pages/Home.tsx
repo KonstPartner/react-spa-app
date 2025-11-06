@@ -1,6 +1,5 @@
+import { Products } from '@features/products/ui';
 import { Group, Stack } from '@mantine/core';
-
-import Products from '@/features/products/containers/Products';
 
 const Home = () => {
   return (

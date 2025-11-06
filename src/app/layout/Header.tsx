@@ -1,12 +1,9 @@
+import { CartIndicator, NavItem, ToggleTheme } from '@app/layout';
 import { Burger, Container, Group, Paper, Text } from '@mantine/core';
-
-import { NAV_LINKS } from '@/constants/navigation';
-import useSchemeTokens from '@/shared/hooks/useSchemeTokens';
-
-import CartIndicator from './CartIndicator';
-import NavItem from './NavItem';
-import ToggleTheme from './ToggleTheme';
+import { useSchemeTokens } from '@shared/hooks';
 import { Link } from 'react-router-dom';
+
+import { NAV_LINKS } from '@/constants';
 
 const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
   const { headerBg, text } = useSchemeTokens();
