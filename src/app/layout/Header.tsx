@@ -23,19 +23,19 @@ const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
               <CartIndicator />
             </Group>
 
-            <Burger onClick={onBurgerClick} hiddenFrom="sm" />
+            <Burger color={text} onClick={onBurgerClick} hiddenFrom="sm" />
             <Group visibleFrom="sm">
               {NAV_LINKS.map(({ path, label }) => (
                 <NavItem key={path} path={path}>
                   {label}
                 </NavItem>
               ))}
-              <CartIndicator />
             </Group>
+          </Group>
 
-            <Container visibleFrom="sm">
-              <ToggleTheme />
-            </Container>
+          <Group visibleFrom="sm" gap="lg">
+            <CartIndicator />
+            <ToggleTheme />
           </Group>
         </Group>
       </Container>

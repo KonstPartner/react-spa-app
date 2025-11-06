@@ -4,11 +4,8 @@
   font-weight: 600;
   font-size: 18px;
 }
-.link:hover {
-  color: var(--link-active);
-}
 
+.link:hover,
 .linkActive {
-  color: var(--link-active);
-  border-bottom: 2px solid var(--link-active);
+  border-bottom: 2px solid var(--link-color);
 }
