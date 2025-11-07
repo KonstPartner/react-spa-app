@@ -4,7 +4,7 @@ import { ScrollArea, Stack } from '@mantine/core';
 import { NAV_LINKS } from '@/constants';
 import { useSchemeTokens } from '@/shared/hooks';
 
-export default function SideNav({ onNavigate }: { onNavigate: () => void }) {
+const SideNav = ({ onNavigate }: { onNavigate: () => void }) => {
   const { headerBg } = useSchemeTokens();
 
   return (
@@ -24,4 +24,6 @@ export default function SideNav({ onNavigate }: { onNavigate: () => void }) {
       </Stack>
     </ScrollArea>
   );
-}
+};
+
+export default SideNav;

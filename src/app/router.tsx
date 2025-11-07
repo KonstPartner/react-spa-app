@@ -26,10 +26,12 @@ const router = createBrowserRouter(
   { basename: import.meta.env.BASE_URL }
 );
 
-export default function AppRouter() {
+const AppRouter = () => {
   return (
     <Suspense fallback={<div>Loading…</div>}>
       <RouterProvider router={router} />
     </Suspense>
   );
-}
+};
+
+export default AppRouter;

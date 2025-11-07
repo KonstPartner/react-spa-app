@@ -5,6 +5,7 @@ const getColor = (theme: MantineTheme, token: string) => {
     keyof typeof theme.colors,
     string,
   ];
+  
   return theme.colors[palette]?.[Number(index)] || token;
 };
 
