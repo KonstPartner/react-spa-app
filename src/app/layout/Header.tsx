@@ -12,7 +12,7 @@ const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
     <Paper shadow="sm" radius={0} bg={headerBg}>
       <Container py="sm" size="lg">
         <Group justify="space-between" align="center">
-          <Link to={'/'}>
+          <Link to="/" aria-label="Go to homepage">
             <Text c={text} fw={800} fz="h2">
               Goods Shop
             </Text>
@@ -20,22 +20,30 @@ const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
 
           <Group gap={20}>
             <Group hiddenFrom="sm">
-              <CartIndicator />
+              <CartIndicator aria-label="Cart" />
             </Group>
 
-            <Burger color={text} onClick={onBurgerClick} hiddenFrom="sm" />
-            <Group visibleFrom="sm">
+            <Burger
+              color={text}
+              onClick={onBurgerClick}
+              hiddenFrom="sm"
+              aria-label="Open navigation menu"
+              aria-controls="main-nav"
+              aria-expanded={false}
+            />
+
+            <Group visibleFrom="sm" aria-label="Main" component="ul" gap="lg">
               {NAV_LINKS.map(({ path, label }) => (
-                <NavItem key={path} path={path}>
-                  {label}
-                </NavItem>
+                <li key={path}>
+                  <NavItem path={path}>{label}</NavItem>
+                </li>
               ))}
             </Group>
           </Group>
 
           <Group visibleFrom="sm" gap="lg">
-            <CartIndicator />
-            <ToggleTheme />
+            <CartIndicator aria-label="Cart" />
+            <ToggleTheme aria-label="Toggle color scheme" />
           </Group>
         </Group>
       </Container>

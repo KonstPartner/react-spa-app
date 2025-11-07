@@ -12,8 +12,8 @@ const CartOperations = ({
   qty: number;
 }) => {
   const dispatch = useAppDispatch();
-
   const { id } = item;
+
   if (qty <= 0) {
     return null;
   }
@@ -28,7 +28,7 @@ const CartOperations = ({
         <Minus size={16} />
       </ActionIcon>
 
-      <Button variant="light" color="teal">
+      <Button variant="light" color="teal" aria-label={`Quantity: ${qty}`}>
         {qty} in cart
       </Button>
 
@@ -39,8 +39,10 @@ const CartOperations = ({
       >
         <Plus size={16} />
       </ActionIcon>
+
       <Tooltip label="Remove from cart">
         <Button
+          aria-label="Remove item from cart"
           px={5}
           onClick={() => dispatch(removeItem({ id }))}
           variant="filled"

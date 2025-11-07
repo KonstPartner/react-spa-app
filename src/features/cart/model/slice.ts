@@ -1,7 +1,31 @@
 import type { CartItem, CartState } from '@features/cart/model';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState: CartState = { items: {} };
+const STORAGE_KEY = 'cart';
+
+const loadCart = (): CartState => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    if (saved) {
+      return JSON.parse(saved);
+    }
+  } catch {
+    return { items: {} };
+  }
+
+  return { items: {} };
+};
+
+const saveCart = (state: CartState) => {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch {
+    return;
+  }
+};
+
+const initialState: CartState = loadCart();
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -18,9 +42,11 @@ const cartSlice = createSlice({
       } else {
         state.items[id] = { id, qty, ...rest };
       }
+      saveCart(state);
     },
     removeItem(state, action: PayloadAction<{ id: number }>) {
       delete state.items[action.payload.id];
+      saveCart(state);
     },
     setQuantity(state, action: PayloadAction<{ id: number; qty: number }>) {
       const { id, qty } = action.payload;
@@ -29,9 +55,11 @@ const cartSlice = createSlice({
       } else if (state.items[id]) {
         state.items[id]!.qty = qty;
       }
+      saveCart(state);
     },
     clearCart(state) {
       state.items = {};
+      saveCart(state);
     },
   },
 });

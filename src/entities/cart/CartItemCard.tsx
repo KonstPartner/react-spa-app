@@ -4,7 +4,13 @@ import { CartWidget } from '@features/cart/ui';
 import { Box, Card, Group, Image, Stack, Text, Title } from '@mantine/core';
 import { getFinalPrice } from '@shared/utils';
 
-const CartItemCard = ({ item }: { item: CartItem }) => {
+const CartItemCard = ({
+  item,
+  isPriority,
+}: {
+  item: CartItem;
+  isPriority?: boolean;
+}) => {
   const { title, category, price, discountPercentage, rating, thumbnail, qty } =
     item;
   const unit = getFinalPrice(price, discountPercentage);
@@ -15,7 +21,16 @@ const CartItemCard = ({ item }: { item: CartItem }) => {
       <Group justify="space-between" gap="lg">
         <Group>
           <Box w={{ base: 250, xs: 96 }}>
-            <Image src={thumbnail} alt={title} radius="md" />
+            <Image
+              width={96}
+              style={{ aspectRatio: '1 / 1' }}
+              src={thumbnail}
+              alt={title}
+              radius="md"
+              loading={isPriority ? 'eager' : 'lazy'}
+              fetchPriority={isPriority ? 'high' : 'auto'}
+              decoding="async"
+            />
           </Box>
 
           <Stack gap={4}>

@@ -14,9 +14,11 @@ import { getFinalPrice } from '@shared/utils';
 const ProductCard = ({
   product,
   onClick,
+  isPriority,
 }: {
   product: Product;
   onClick?: () => void;
+  isPriority?: boolean;
 }) => {
   const { title, category, price, discountPercentage, rating, thumbnail } =
     product;
@@ -34,7 +36,19 @@ const ProductCard = ({
       <Stack justify="space-between">
         <Group>
           <Box w={{ sm: '100%' }} mx="auto">
-            <Image src={thumbnail} alt={title} radius="sm" fit="cover" />
+            <Image
+              component="img"
+              width={242}
+              height={242}
+              style={{ aspectRatio: '1 / 1' }}
+              src={thumbnail}
+              alt={title}
+              radius="sm"
+              fit="cover"
+              loading={isPriority ? 'eager' : 'lazy'}
+              fetchPriority={isPriority ? 'high' : 'auto'}
+              decoding="async"
+            />
           </Box>
 
           <Text fw={600} h={50} lineClamp={2}>
