@@ -1,4 +1,4 @@
-import { Header, SideNav } from '@app/layout';
+import { Footer, Header, SideNav } from '@app/layout';
 import { AppShell, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Outlet } from 'react-router-dom';
@@ -23,11 +23,15 @@ export default function AppLayout() {
         <SideNav onNavigate={close} />
       </AppShell.Navbar>
 
-      <AppShell.Main>
+      <AppShell.Main pb={50}>
         <Container size="lg" py="lg">
           <Outlet />
         </Container>
       </AppShell.Main>
+
+      <AppShell.Footer>
+        <Footer />
+      </AppShell.Footer>
     </AppShell>
   );
 }
