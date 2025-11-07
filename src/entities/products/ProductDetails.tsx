@@ -8,7 +8,7 @@ import type { Product } from '@features/products/model';
 import { Reviews } from '@features/reviews/ui';
 import { Box, Divider, Grid, Group, Image, Paper, Stack } from '@mantine/core';
 
-export default function ProductDetails({ product }: { product: Product }) {
+const ProductDetails = ({ product }: { product: Product }) => {
   const { title, thumbnail, reviews } = product;
 
   return (
@@ -54,4 +54,6 @@ export default function ProductDetails({ product }: { product: Product }) {
       </Stack>
     </Box>
   );
-}
+};
+
+export default ProductDetails;

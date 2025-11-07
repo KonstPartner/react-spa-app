@@ -3,7 +3,7 @@ import { AppShell, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Outlet } from 'react-router-dom';
 
-export default function AppLayout() {
+const AppLayout = () => {
   const [opened, { toggle, close }] = useDisclosure(false);
 
   return (
@@ -34,4 +34,6 @@ export default function AppLayout() {
       </AppShell.Footer>
     </AppShell>
   );
-}
+};
+
+export default AppLayout;

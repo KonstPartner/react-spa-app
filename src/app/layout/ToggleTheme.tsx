@@ -3,7 +3,7 @@ import { useSchemeTokens, useThemeSwitcher } from '@shared/hooks';
 import { ThemeMode } from '@shared/hooks';
 import { Monitor, Moon, Sun } from 'lucide-react';
 
-export default function ToggleTheme() {
+const ToggleTheme = () => {
   const { theme, setTheme } = useThemeSwitcher();
   const getVariant = (mode: ThemeMode) =>
     theme === mode ? 'filled' : 'subtle';
@@ -56,4 +56,6 @@ export default function ToggleTheme() {
       </Group>
     </Paper>
   );
-}
+};
+
+export default ToggleTheme;
