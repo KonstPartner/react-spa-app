@@ -28,8 +28,8 @@ const CartMenu = () => {
       </Group>
 
       <Stack gap="md">
-        {items.map((it) => (
-          <CartItemCard key={it.id} item={it} />
+        {items.map((it, i) => (
+          <CartItemCard key={it.id} item={it} isPriority={i === 0} />
         ))}
       </Stack>
 

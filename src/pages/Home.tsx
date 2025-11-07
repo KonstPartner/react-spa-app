@@ -21,7 +21,9 @@ const Home = () => {
         >
           {
             <Group>
-              <Text fw={600}>Go to Catalog</Text>
+              <Text className="a11y-contrast-text" fw={600}>
+                Go to Catalog
+              </Text>
               <ArrowRight />
             </Group>
           }

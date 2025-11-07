@@ -14,6 +14,7 @@ const AddToCardButton = ({ item }: { item: Omit<CartItem, 'qty'> }) => {
         onClick={() => dispatch(addItem({ ...item, qty: 1 }))}
         variant="filled"
         color="teal"
+        aria-label="Add item to cart"
       >
         Add to cart
       </Button>

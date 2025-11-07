@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useGetProductsQuery } from '@/services';
 
-const LIMIT = 50;
+const LIMIT = 20;
 
 const Products = () => {
   const [skip, setSkip] = useState(0);

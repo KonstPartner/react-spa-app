@@ -7,6 +7,22 @@ export default defineConfig({
   base: '/react-spa-app/',
   server: { open: true },
   plugins: [react(), imagetools()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          mantine: [
+            '@mantine/core',
+            '@mantine/hooks',
+            '@mantine/notifications',
+          ],
+          icons: ['lucide-react'],
+        },
+      },
+    },
+  },
+  minify: 'esbuild',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
