@@ -18,6 +18,7 @@ export default defineConfig({
             '@mantine/notifications',
           ],
           icons: ['lucide-react'],
+          redux: ['@reduxjs/toolkit', 'react-redux'],
         },
       },
     },

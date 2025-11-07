@@ -32,7 +32,7 @@ const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
               aria-expanded={false}
             />
 
-            <Group visibleFrom="sm" aria-label="Main" component="ul">
+            <Group visibleFrom="sm" aria-label="Main" component="ul" gap="lg">
               {NAV_LINKS.map(({ path, label }) => (
                 <li key={path}>
                   <NavItem path={path}>{label}</NavItem>

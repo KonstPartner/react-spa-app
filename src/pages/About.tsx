@@ -11,10 +11,10 @@ const About = () => {
       <Divider />
       <Stack>
         <Text>
-          Shop is a modern online store where we bring together
-          the best products at fair prices. We believe shopping should be
-          simple, enjoyable, and fast. Every item is carefully selected to
-          ensure you get only what’s truly worth your attention.
+          Shop is a modern online store where we bring together the best
+          products at fair prices. We believe shopping should be simple,
+          enjoyable, and fast. Every item is carefully selected to ensure you
+          get only what’s truly worth your attention.
         </Text>
 
         <Text>
