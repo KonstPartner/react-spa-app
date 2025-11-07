@@ -1,14 +1,33 @@
-import { Products } from '@features/products/ui';
-import { Group, Stack } from '@mantine/core';
+import { Button, Center, Group, Stack, Text } from '@mantine/core';
+import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+import { useSchemeTokens } from '@/shared/hooks';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const { headerBg, text } = useSchemeTokens();
+
   return (
-    <Stack>
-      <h1>Catalog</h1>
-      <Group justify="center">
-        <Products />
-      </Group>
-    </Stack>
+    <Center mih="calc(100dvh - 120px)">
+      <Stack align="center" gap="md" ta="center">
+        <h1>Welcome to Goods Shop</h1>
+        <Text size="lg">Your favorite products, delivered fast and easy.</Text>
+        <Button
+          bg={headerBg}
+          c={text}
+          size="md"
+          onClick={() => navigate('/products')}
+        >
+          {
+            <Group>
+              <Text fw={600}>Go to Catalog</Text>
+              <ArrowRight />
+            </Group>
+          }
+        </Button>
+      </Stack>
+    </Center>
   );
 };
 
