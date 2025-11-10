@@ -4,7 +4,6 @@ import {
   Box,
   Card,
   Group,
-  Image,
   Stack,
   Text,
   Title,
@@ -16,16 +15,23 @@ import { Link } from 'react-router-dom';
 import { useSchemeTokens } from '@/hooks';
 import { getColor, getFinalPrice } from '@/utils';
 
+import { LazyImage } from '../shared/ui';
 import classes from './CartItemCard.module.css';
 
-const CartItemCard = ({ item }: { item: CartItem }) => {
+const CartItemCard = ({
+  item,
+  itemLink,
+}: {
+  item: CartItem;
+  itemLink: string;
+}) => {
   const { link } = useSchemeTokens();
   const theme = useMantineTheme();
 
   const colorVars = {
     '--link-color': getColor(theme, link),
   } as CSSProperties;
-
+  const IMG_SIZE = 96;
   const {
     id,
     title,
@@ -44,14 +50,13 @@ const CartItemCard = ({ item }: { item: CartItem }) => {
       <Group justify="space-between" gap="lg">
         <Group>
           <Box w={{ base: 250, xs: 96 }}>
-            <Link to={`/products/${id}`}>
-              <Image
-                width={96}
-                style={{ aspectRatio: '1 / 1' }}
+            <Link to={itemLink}>
+              <LazyImage
                 src={thumbnail}
                 alt={title}
                 radius="md"
-                decoding="async"
+                width={IMG_SIZE}
+                height={IMG_SIZE}
               />
             </Link>
           </Box>

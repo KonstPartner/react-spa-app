@@ -7,7 +7,7 @@ const ProductList = ({
   onItemClick,
 }: {
   products: Product[];
-  onItemClick?: (_id: number) => void;
+  onItemClick: (id: number) => void;
 }) => {
   return (
     <SimpleGrid cols={{ base: 1, xs: 2, md: 3, lg: 4 }} spacing="md">
@@ -15,7 +15,7 @@ const ProductList = ({
         <ProductCard
           key={product.id}
           product={product}
-          onClick={onItemClick ? () => onItemClick(product.id) : undefined}
+          onClick={() => onItemClick(product.id)}
         />
       ))}
     </SimpleGrid>

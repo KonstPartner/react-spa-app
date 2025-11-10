@@ -30,7 +30,11 @@ const CartMenu = () => {
 
       <Stack gap="md">
         {items.map((item) => (
-          <CartItemCard key={item.id} item={item} />
+          <CartItemCard
+            key={item.id}
+            item={item}
+            itemLink={`/products/${item.id}`}
+          />
         ))}
       </Stack>
 

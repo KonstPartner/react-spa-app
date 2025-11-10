@@ -1,23 +1,17 @@
 import type { Product } from '@features/products/model';
-import {
-  Badge,
-  Box,
-  Card,
-  Group,
-  Image,
-  Rating,
-  Stack,
-  Text,
-} from '@mantine/core';
+import { Badge, Box, Card, Group, Rating, Stack, Text } from '@mantine/core';
 
 import { getFinalPrice } from '@/utils';
+import { LazyImage } from '@entities/shared/ui';
+
+const IMG_SIZE = 242;
 
 const ProductCard = ({
   product,
   onClick,
 }: {
   product: Product;
-  onClick?: () => void;
+  onClick: () => void;
 }) => {
   const { title, category, price, discountPercentage, rating, thumbnail } =
     product;
@@ -30,21 +24,16 @@ const ProductCard = ({
       radius="md"
       shadow="xs"
       onClick={onClick}
-      style={{ cursor: onClick ? 'pointer' : 'default' }}
+      style={{ cursor: 'pointer' }}
     >
       <Stack justify="space-between">
         <Stack>
           <Box w={{ sm: '100%' }} mx="auto">
-            <Image
-              component="img"
-              width={242}
-              height={242}
-              style={{ aspectRatio: '1 / 1' }}
+            <LazyImage
               src={thumbnail}
               alt={title}
-              radius="sm"
-              fit="cover"
-              decoding="async"
+              width={IMG_SIZE}
+              height={IMG_SIZE}
             />
           </Box>
 
