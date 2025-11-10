@@ -34,7 +34,7 @@ const Product = () => {
   }
 
   return (
-    <Stack>
+    <Stack py="lg">
       <h1>Product</h1>
       <Group justify="center">
         <ProductDetails product={product} />

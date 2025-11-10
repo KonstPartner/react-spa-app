@@ -8,7 +8,7 @@ const Error = () => {
   const { headerBg, text } = useSchemeTokens();
 
   return (
-    <Center mih="calc(100dvh - 120px)">
+    <Center mih="calc(100dvh - var(--app-shell-header-offset) - var(--app-shell-footer-offset))">
       <Container size="sm">
         <Stack align="center" ta="center" gap="md">
           <h1>Error</h1>

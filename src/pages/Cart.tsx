@@ -9,7 +9,7 @@ const Cart = () => {
 
   if (items.length === 0) {
     return (
-      <Stack>
+      <Stack py="lg">
         <h1>Cart</h1>
         <Stack align="center">
           <Text>Your cart is empty.</Text>

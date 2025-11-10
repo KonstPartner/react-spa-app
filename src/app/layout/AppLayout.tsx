@@ -10,9 +10,10 @@ const AppLayout = () => {
   return (
     <AppShell
       header={{ height: 64 }}
+      footer={{ height: 54 }}
       navbar={{
         width: 280,
-        breakpoint: 'sm',
+        breakpoint: 'xs',
         collapsed: { mobile: !opened, desktop: !opened },
       }}
     >
@@ -24,8 +25,8 @@ const AppLayout = () => {
         <SideNav onNavigate={close} />
       </AppShell.Navbar>
 
-      <AppShell.Main pb={50}>
-        <Container size="lg" py="lg">
+      <AppShell.Main>
+        <Container size="lg">
           <Outlet />
         </Container>
       </AppShell.Main>

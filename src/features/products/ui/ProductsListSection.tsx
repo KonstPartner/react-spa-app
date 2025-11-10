@@ -1,6 +1,6 @@
 import { ProductList } from '@entities/products';
 import { Product } from '@features/products/model';
-import { Box, Loader, Stack, Text } from '@mantine/core';
+import { Box, Group, Loader, Stack, Text } from '@mantine/core';
 import { RefObject } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +33,7 @@ const ProductsListSection = ({
       miw={250}
       w={{ base: '100%', xs: '80%', sm: '60%', md: '80%', lg: '100%' }}
     >
-      <>
+      <Group justify="center">
         <ProductList
           products={products}
           onItemClick={(id: number) => navigate(`/products/${id}`)}
@@ -41,18 +41,16 @@ const ProductsListSection = ({
         <div ref={sentinelRef} style={{ height: 1 }} />
 
         {isFetching && (
-          <Stack align="center" py="md">
+          <Stack align="center">
             <Loader size="sm" />
             <Text size="sm">Loading more…</Text>
           </Stack>
         )}
 
         {!canLoadMore && products.length > 0 && (
-          <Text ta="center" py="lg">
-            You’ve reached the end
-          </Text>
+          <Text>You’ve reached the end</Text>
         )}
-      </>
+      </Group>
     </Box>
   );
 };

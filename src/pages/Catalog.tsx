@@ -3,7 +3,7 @@ import { Group, Stack } from '@mantine/core';
 
 const Catalog = () => {
   return (
-    <Stack>
+    <Stack py="lg">
       <h1>Catalog</h1>
       <Group justify="center">
         <Products />

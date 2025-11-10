@@ -35,7 +35,7 @@ const ProductCard = ({
       style={{ cursor: onClick ? 'pointer' : 'default' }}
     >
       <Stack justify="space-between">
-        <Group>
+        <Stack>
           <Box w={{ sm: '100%' }} mx="auto">
             <Image
               component="img"
@@ -55,7 +55,7 @@ const ProductCard = ({
           <Text fw={600} h={50} lineClamp={2}>
             {title}
           </Text>
-        </Group>
+        </Stack>
 
         <Stack>
           <Badge variant="light" size="sm" tt="capitalize">

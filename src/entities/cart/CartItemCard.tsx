@@ -1,9 +1,22 @@
-import classes from '@entities/cart/CartItemCard.module.css';
 import { CartItem } from '@features/cart/model';
 import { CartWidget } from '@features/cart/ui';
-import { Box, Card, Group, Image, Stack, Text, Title } from '@mantine/core';
+import {
+  Box,
+  Card,
+  Group,
+  Image,
+  Stack,
+  Text,
+  Title,
+  useMantineTheme,
+} from '@mantine/core';
+import { CSSProperties } from 'react';
+import { Link } from 'react-router-dom';
 
-import { getFinalPrice } from '@/utils';
+import { useSchemeTokens } from '@/hooks';
+import { getColor, getFinalPrice } from '@/utils';
+
+import classes from './CartItemCard.module.css';
 
 const CartItemCard = ({
   item,
@@ -12,8 +25,23 @@ const CartItemCard = ({
   item: CartItem;
   isPriority?: boolean;
 }) => {
-  const { title, category, price, discountPercentage, rating, thumbnail, qty } =
-    item;
+  const { link } = useSchemeTokens();
+  const theme = useMantineTheme();
+
+  const colorVars = {
+    '--link-color': getColor(theme, link),
+  } as CSSProperties;
+
+  const {
+    id,
+    title,
+    category,
+    price,
+    discountPercentage,
+    rating,
+    thumbnail,
+    qty,
+  } = item;
   const unit = getFinalPrice(price, discountPercentage);
   const total = (unit * qty).toFixed(2);
 
@@ -22,21 +50,29 @@ const CartItemCard = ({
       <Group justify="space-between" gap="lg">
         <Group>
           <Box w={{ base: 250, xs: 96 }}>
-            <Image
-              width={96}
-              style={{ aspectRatio: '1 / 1' }}
-              src={thumbnail}
-              alt={title}
-              radius="md"
-              loading={isPriority ? 'eager' : 'lazy'}
-              fetchPriority={isPriority ? 'high' : 'auto'}
-              decoding="async"
-            />
+            <Link to={`/products/${id}`}>
+              <Image
+                width={96}
+                style={{ aspectRatio: '1 / 1' }}
+                src={thumbnail}
+                alt={title}
+                radius="md"
+                loading={isPriority ? 'eager' : 'lazy'}
+                fetchPriority={isPriority ? 'high' : 'auto'}
+                decoding="async"
+              />
+            </Link>
           </Box>
 
           <Stack gap={4}>
             <Title order={4} lineClamp={2}>
-              {title}
+              <Link
+                style={colorVars}
+                className={`${classes.link}`}
+                to={`/products/${id}`}
+              >
+                {title}
+              </Link>
             </Title>
             <Text size="sm" tt="capitalize">
               {category}

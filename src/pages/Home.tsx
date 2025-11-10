@@ -9,7 +9,7 @@ const Home = () => {
   const { headerBg, text } = useSchemeTokens();
 
   return (
-    <Center mih="calc(100dvh - 120px)">
+    <Center mih="calc(100dvh - var(--app-shell-header-offset) - var(--app-shell-footer-offset))">
       <Stack align="center" gap="md" ta="center">
         <h1>Welcome to Goods Shop</h1>
         <Text size="lg">Your favorite products, delivered fast and easy.</Text>

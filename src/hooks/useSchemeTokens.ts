@@ -8,6 +8,7 @@ const useSchemeTokens = () => {
   return {
     headerBg: scheme === 'dark' ? 'orange.6' : 'orange.5',
     text: scheme === 'dark' ? 'gray.8' : 'gray.2',
+    link: scheme === 'dark' ? 'white' : 'black',
   };
 };
 
