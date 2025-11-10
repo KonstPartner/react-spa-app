@@ -1,9 +1,9 @@
-import { useMantineTheme } from '@mantine/core';
 import { CSSProperties, ReactNode } from 'react';
+import { useMantineTheme } from '@mantine/core';
 import { NavLink } from 'react-router-dom';
 
-import { useSchemeTokens } from '@/hooks';
-import { getColor } from '@/utils';
+import { useSchemeTokens } from '@hooks';
+import { getColor } from '@utils';
 
 import classes from './NavItem.module.css';
 

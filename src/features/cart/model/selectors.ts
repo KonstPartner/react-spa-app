@@ -1,5 +1,6 @@
-import type { RootState } from '@/app';
-import { getFinalPrice } from '@/utils';
+import type { RootState } from '@app';
+
+import { getFinalPrice } from '@utils';
 
 export const selectCartItems = (state: RootState) =>
   Object.values(state.cart.items);

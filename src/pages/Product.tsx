@@ -1,8 +1,8 @@
-import { ProductDetails } from '@entities/products';
 import { Container, Group, Loader, Stack, Text } from '@mantine/core';
 import { useParams } from 'react-router-dom';
 
-import { useGetProductByIdQuery } from '@/services';
+import { ProductDetails } from '@entities/products';
+import { useGetProductByIdQuery } from '@services';
 
 const Product = () => {
   const { id } = useParams<{ id: string }>();

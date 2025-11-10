@@ -1,5 +1,4 @@
-import { CartItem } from '@features/cart/model';
-import { CartWidget } from '@features/cart/ui';
+import { CSSProperties } from 'react';
 import {
   Box,
   Card,
@@ -9,13 +8,14 @@ import {
   Title,
   useMantineTheme,
 } from '@mantine/core';
-import { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useSchemeTokens } from '@/hooks';
-import { getColor, getFinalPrice } from '@/utils';
+import { CartItem } from '@features/cart/model';
+import { CartWidget } from '@features/cart/ui';
+import { LazyImage } from '@entities/shared/ui';
+import { useSchemeTokens } from '@hooks';
+import { getColor, getFinalPrice } from '@utils';
 
-import { LazyImage } from '../shared/ui';
 import classes from './CartItemCard.module.css';
 
 const CartItemCard = ({

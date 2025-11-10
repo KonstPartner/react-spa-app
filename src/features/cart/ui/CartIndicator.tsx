@@ -1,11 +1,10 @@
-import { selectCartTotalCount } from '@features/cart/model/selectors';
 import { ActionIcon, Indicator, Tooltip, useMantineTheme } from '@mantine/core';
 import { ShoppingCart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-import { useSchemeTokens } from '@/hooks';
-import { useAppSelector } from '@/hooks/reduxHooks';
-import { getColor } from '@/utils';
+import { selectCartTotalCount } from '@features/cart/model/selectors';
+import { useAppSelector, useSchemeTokens } from '@hooks';
+import { getColor } from '@utils';
 
 const CartIndicator = () => {
   const count = useAppSelector(selectCartTotalCount);

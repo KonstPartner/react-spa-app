@@ -1,4 +1,4 @@
-import { Review } from '@/features/reviews/modal';
+import { Review } from '@features/reviews/modal';
 
 export type Dimensions = {
   width: number;

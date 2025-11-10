@@ -37,7 +37,27 @@ export default [
       'react/react-in-jsx-scope': 'off',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/imports': [
+        'warn',
+        {
+          groups: [
+            ['^\\u0000'],
+            ['^react$', '^react-dom$', '^@?\\w'],
+            [
+              '^@app(/.*)?$',
+              '^@features(/.*)?$',
+              '^@entities(/.*)?$',
+              '^@hooks(/.*)?$',
+              '^@utils(/.*)?$',
+              '^@pages(/.*)?$',
+              '^@services(/.*)?$',
+              '^@constants(/.*)?$',
+            ],
+            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+            ['^\\./(?!/?$)', '^\\./?$'],
+          ],
+        },
+      ],
       'simple-import-sort/exports': 'warn',
       ...prettier.rules,
       '@typescript-eslint/no-unused-vars': [

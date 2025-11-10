@@ -2,7 +2,7 @@ import { Button, Center, Group, Stack, Text } from '@mantine/core';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-import { useSchemeTokens } from '@/hooks';
+import { useSchemeTokens } from '@hooks';
 
 const Home = () => {
   const navigate = useNavigate();

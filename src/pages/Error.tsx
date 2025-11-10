@@ -1,7 +1,7 @@
 import { Button, Center, Container, Stack, Text, Title } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
 
-import { useSchemeTokens } from '@/hooks';
+import { useSchemeTokens } from '@hooks';
 
 const Error = () => {
   const navigate = useNavigate();

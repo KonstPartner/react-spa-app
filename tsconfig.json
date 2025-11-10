@@ -16,14 +16,22 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./src/*"],
-      "@app/*": ["./src/app/*"],
       "@pages/*": ["./src/pages/*"],
+      "@app/*": ["./src/app/*"],
+      "@app": ["./src/app/index.ts"],
+      "@pages": ["./src/pages/index.ts"],
       "@features/*": ["./src/features/*"],
+      "@features": ["./src/features/index.ts"],
       "@entities/*": ["./src/entities/*"],
-      "@shared/*": ["./src/shared/*"],
+      "@entities": ["./src/entities/index.ts"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@hooks": ["./src/hooks/index.ts"],
+      "@utils/*": ["./src/utils/*"],
+      "@utils": ["./src/utils/index.ts"],
       "@services/*": ["./src/services/*"],
-      "@constants/*": ["./src/constants/*"]
+      "@services": ["./src/services/index.ts"],
+      "@constants/*": ["./src/constants/*"],
+      "@constants": ["./src/constants/index.ts"]
     }
   },
   "include": ["src", "global.d.ts"]

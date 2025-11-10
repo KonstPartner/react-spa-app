@@ -1,8 +1,8 @@
-import type { Product } from '@features/products/model';
 import { Badge, Box, Card, Group, Rating, Stack, Text } from '@mantine/core';
 
-import { getFinalPrice } from '@/utils';
+import type { Product } from '@features/products/model';
 import { LazyImage } from '@entities/shared/ui';
+import { getFinalPrice } from '@utils';
 
 const IMG_SIZE = 242;
 

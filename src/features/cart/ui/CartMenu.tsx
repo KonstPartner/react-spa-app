@@ -1,13 +1,13 @@
-import { CartItemCard } from '@entities/cart';
+import { Box, Button, Divider, Group, Stack, Text, Title } from '@mantine/core';
+
 import {
   selectCartItems,
   selectCartSubtotal,
   selectCartTotalCount,
 } from '@features/cart/model/selectors';
 import { clearCart } from '@features/cart/model/slice';
-import { Box, Button, Divider, Group, Stack, Text, Title } from '@mantine/core';
-
-import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
+import { CartItemCard } from '@entities/cart';
+import { useAppDispatch, useAppSelector } from '@hooks';
 
 const CartMenu = () => {
   const dispatch = useAppDispatch();

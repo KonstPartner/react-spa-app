@@ -1,5 +1,5 @@
-import { useMantineColorScheme } from '@mantine/core';
 import { useEffect, useState } from 'react';
+import { useMantineColorScheme } from '@mantine/core';
 
 export type ThemeMode = 'light' | 'dark' | 'system';
 

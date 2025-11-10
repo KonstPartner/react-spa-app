@@ -1,8 +1,9 @@
-import { ProductList } from '@entities/products';
-import { Product } from '@features/products/model';
-import { Box, Group, Loader, Stack, Text } from '@mantine/core';
 import { RefObject } from 'react';
+import { Box, Group, Loader, Stack, Text } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
+
+import { Product } from '@features/products/model';
+import { ProductList } from '@entities/products';
 
 const ProductsListSection = ({
   products,

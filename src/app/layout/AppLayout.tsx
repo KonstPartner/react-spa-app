@@ -1,8 +1,9 @@
-import { Footer } from '@entities/footer';
-import { Header, SideNav } from '@entities/header';
 import { AppShell, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Outlet } from 'react-router-dom';
+
+import { Footer } from '@entities/footer';
+import { Header, SideNav } from '@entities/header';
 
 const AppLayout = () => {
   const [opened, { toggle, close }] = useDisclosure(false);
