@@ -15,11 +15,9 @@ import { getFinalPrice } from '@/utils';
 const ProductCard = ({
   product,
   onClick,
-  isPriority,
 }: {
   product: Product;
   onClick?: () => void;
-  isPriority?: boolean;
 }) => {
   const { title, category, price, discountPercentage, rating, thumbnail } =
     product;
@@ -46,8 +44,6 @@ const ProductCard = ({
               alt={title}
               radius="sm"
               fit="cover"
-              loading={isPriority ? 'eager' : 'lazy'}
-              fetchPriority={isPriority ? 'high' : 'auto'}
               decoding="async"
             />
           </Box>

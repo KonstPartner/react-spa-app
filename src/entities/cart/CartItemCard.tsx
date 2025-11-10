@@ -18,13 +18,7 @@ import { getColor, getFinalPrice } from '@/utils';
 
 import classes from './CartItemCard.module.css';
 
-const CartItemCard = ({
-  item,
-  isPriority,
-}: {
-  item: CartItem;
-  isPriority?: boolean;
-}) => {
+const CartItemCard = ({ item }: { item: CartItem }) => {
   const { link } = useSchemeTokens();
   const theme = useMantineTheme();
 
@@ -57,8 +51,6 @@ const CartItemCard = ({
                 src={thumbnail}
                 alt={title}
                 radius="md"
-                loading={isPriority ? 'eager' : 'lazy'}
-                fetchPriority={isPriority ? 'high' : 'auto'}
                 decoding="async"
               />
             </Link>

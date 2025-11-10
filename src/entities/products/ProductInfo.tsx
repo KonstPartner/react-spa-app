@@ -62,9 +62,9 @@ const ProductInfo = ({ productInfo }: { productInfo: Product }) => {
 
       {tags?.length > 0 && (
         <Group gap="xs" mt="xs">
-          {tags.map((t) => (
-            <Badge key={t} variant="light" size="sm" tt="capitalize">
-              {t}
+          {tags.map((tag) => (
+            <Badge key={tag} variant="light" size="sm" tt="capitalize">
+              {tag}
             </Badge>
           ))}
         </Group>

@@ -11,12 +11,11 @@ const ProductList = ({
 }) => {
   return (
     <SimpleGrid cols={{ base: 1, xs: 2, md: 3, lg: 4 }} spacing="md">
-      {products.map((p, i) => (
+      {products.map((product) => (
         <ProductCard
-          key={p.id}
-          product={p}
-          onClick={onItemClick ? () => onItemClick(p.id) : undefined}
-          isPriority={i === 0}
+          key={product.id}
+          product={product}
+          onClick={onItemClick ? () => onItemClick(product.id) : undefined}
         />
       ))}
     </SimpleGrid>
