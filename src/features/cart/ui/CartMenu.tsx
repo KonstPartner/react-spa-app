@@ -1,4 +1,3 @@
-import { useAppDispatch, useAppSelector } from '@app/hooks';
 import { CartItemCard } from '@entities/cart';
 import {
   selectCartItems,
@@ -7,6 +6,8 @@ import {
 } from '@features/cart/model/selectors';
 import { clearCart } from '@features/cart/model/slice';
 import { Box, Button, Divider, Group, Stack, Text, Title } from '@mantine/core';
+
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
 
 const CartMenu = () => {
   const dispatch = useAppDispatch();

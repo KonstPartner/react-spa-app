@@ -1,7 +1,8 @@
 import { ActionIcon, Group, Paper, Tooltip } from '@mantine/core';
-import { useSchemeTokens, useThemeSwitcher } from '@shared/hooks';
-import { ThemeMode } from '@shared/hooks';
 import { Monitor, Moon, Sun } from 'lucide-react';
+
+import { useSchemeTokens, useThemeSwitcher } from '@/hooks';
+import { ThemeMode } from '@/hooks';
 
 const ToggleTheme = () => {
   const { theme, setTheme } = useThemeSwitcher();

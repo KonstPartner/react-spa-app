@@ -9,7 +9,8 @@ import {
   Stack,
   Text,
 } from '@mantine/core';
-import { getFinalPrice } from '@shared/utils';
+
+import { getFinalPrice } from '@/utils';
 
 const ProductCard = ({
   product,

@@ -1,6 +1,5 @@
-import { getFinalPrice } from '@shared/utils';
-
 import type { RootState } from '@/app';
+import { getFinalPrice } from '@/utils';
 
 export const selectCartMap = (s: RootState) => s.cart.items;
 

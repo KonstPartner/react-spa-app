@@ -1,6 +1,7 @@
 import { Product } from '@features/products/model/types';
 import { Badge, Group, Rating, Stack, Text, Title } from '@mantine/core';
-import { getFinalPrice } from '@shared/utils/getFinalPrice';
+
+import { getFinalPrice } from '@/utils/getFinalPrice';
 
 const ProductInfo = ({ productInfo }: { productInfo: Product }) => {
   const {

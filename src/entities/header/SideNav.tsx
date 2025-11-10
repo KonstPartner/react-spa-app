@@ -1,8 +1,9 @@
-import { NavItem, ToggleTheme } from '@app/layout';
+import { NavItem } from '@entities/header';
+import { ToggleTheme } from '@features/theme';
 import { ScrollArea, Stack } from '@mantine/core';
 
 import { NAV_LINKS } from '@/constants';
-import { useSchemeTokens } from '@/shared/hooks';
+import { useSchemeTokens } from '@/hooks';
 
 const SideNav = ({ onNavigate }: { onNavigate: () => void }) => {
   const { headerBg } = useSchemeTokens();

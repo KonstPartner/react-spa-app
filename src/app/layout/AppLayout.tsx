@@ -1,4 +1,5 @@
-import { Footer, Header, SideNav } from '@app/layout';
+import { Footer } from '@entities/footer';
+import { Header, SideNav } from '@entities/header';
 import { AppShell, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Outlet } from 'react-router-dom';
