@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useMantineColorScheme } from '@mantine/core';
 
 export type ThemeMode = 'light' | 'dark' | 'system';
@@ -9,25 +9,16 @@ const useThemeSwitcher = () => {
     (localStorage.getItem('theme') as ThemeMode) ?? 'system'
   );
 
-  const setAppColorScheme = (theme: ThemeMode) =>
-    setColorScheme(theme === 'system' ? 'auto' : theme);
+  const setTheme = useCallback(
+    (next: ThemeMode) => {
+      setMode(next);
+      localStorage.setItem('theme', next);
+      setColorScheme(next === 'system' ? 'auto' : next);
+    },
+    [setColorScheme]
+  );
 
-  const setTheme = (next: ThemeMode) => {
-    setMode(next);
-    localStorage.setItem('theme', next);
-    setAppColorScheme(next);
-  };
-
-  useEffect(() => {
-    setAppColorScheme(mode);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  return {
-    theme: mode,
-
-    setTheme,
-  };
+  return { theme: mode, setTheme };
 };
 
 export default useThemeSwitcher;
