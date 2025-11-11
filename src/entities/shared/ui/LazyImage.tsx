@@ -8,7 +8,6 @@ const LazyImage = ({
   height,
   radius = 'sm',
   fit = 'cover',
-  eager = false,
 }: {
   src: string;
   alt: string;
@@ -16,7 +15,6 @@ const LazyImage = ({
   height: number | string;
   radius?: number | string;
   fit?: ImageProps['fit'];
-  eager?: boolean;
 }) => {
   const { ref, inView } = useInView({
     rootMargin: '200px',
@@ -24,11 +22,9 @@ const LazyImage = ({
     triggerOnce: true,
   });
 
-  const shouldLoad = eager || inView;
-
   return (
-    <div ref={ref} style={{ width, height }}>
-      {shouldLoad ? (
+    <div ref={ref}>
+      {inView ? (
         <Image
           component="img"
           src={src}
@@ -38,7 +34,6 @@ const LazyImage = ({
           radius={radius}
           fit={fit}
           decoding="async"
-          loading={eager ? 'eager' : 'lazy'}
         />
       ) : (
         <Skeleton width={width} height={height} radius={radius} />

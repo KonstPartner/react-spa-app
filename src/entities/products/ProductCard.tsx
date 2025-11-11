@@ -28,7 +28,7 @@ const ProductCard = ({
     >
       <Stack justify="space-between">
         <Stack>
-          <Box w={{ sm: '100%' }} mx="auto">
+          <Box w={{ sm: '100%' }}>
             <LazyImage
               src={thumbnail}
               alt={title}
