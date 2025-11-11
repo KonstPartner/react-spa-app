@@ -1,4 +1,4 @@
-import { RefObject } from 'react';
+import { RefCallback } from 'react';
 import { Box, Group, Loader, Stack, Text } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ const ProductsListSection = ({
   isLoading: boolean;
   isFetching: boolean;
   canLoadMore: boolean;
-  sentinelRef: RefObject<HTMLDivElement | null>;
+  sentinelRef: RefCallback<HTMLDivElement>;
 }) => {
   const navigate = useNavigate();
 

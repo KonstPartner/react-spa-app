@@ -74,6 +74,7 @@ const CartItemCard = ({
             <Text size="sm" tt="capitalize">
               {category}
             </Text>
+
             <Group gap="sm">
               {discountPercentage ? (
                 <>

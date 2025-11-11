@@ -8,6 +8,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
       <Avatar radius="xl" color="blue">
         {review.reviewerName.charAt(0).toUpperCase()}
       </Avatar>
+
       <Stack gap={2} flex={1}>
         <Group justify="space-between" align="center">
           <Text fw={600}>{review.reviewerName}</Text>
@@ -15,6 +16,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
             {new Date(review.date).toLocaleDateString()}
           </Text>
         </Group>
+
         <Rating value={review.rating} readOnly size="sm" />
         <Text size="sm" mt={2}>
           {review.comment}

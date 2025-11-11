@@ -1,7 +1,7 @@
 {
   "name": "react-spa-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A responsive single-page online shop built with React, Mantine, Redux Toolkit, and Vite.",
   "main": "index.js",
   "type": "module",
   "scripts": {

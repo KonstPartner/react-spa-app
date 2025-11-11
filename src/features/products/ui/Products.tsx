@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Text } from '@mantine/core';
+import { useInView } from 'react-intersection-observer';
 
 import { ProductsListSection } from '@features/products/ui';
 import { useGetProductsQuery } from '@services';
@@ -17,27 +18,19 @@ const Products = () => {
   const total = data?.total ?? 0;
 
   const canLoadMore = products.length < total;
-  const sentinelRef = useRef<HTMLDivElement | null>(null);
+
+  const { ref: sentinelRef, inView } = useInView({
+    root: null,
+    rootMargin: '500px 0px',
+    threshold: 0,
+    triggerOnce: false,
+  });
 
   useEffect(() => {
-    const el = sentinelRef.current;
-    if (!el) {
-      return;
+    if (inView && !isFetching && canLoadMore) {
+      setSkip((prev) => prev + LIMIT);
     }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const first = entries[0];
-        if (first.isIntersecting && !isFetching && canLoadMore) {
-          setSkip((prev) => prev + LIMIT);
-        }
-      },
-      { rootMargin: '500px 0px' }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [isFetching, canLoadMore]);
+  }, [inView, isFetching, canLoadMore]);
 
   if (isError) {
     return <Text>Failed to load products</Text>;
