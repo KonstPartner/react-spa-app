@@ -12,7 +12,7 @@ export const selectCartTotalCount = (state: RootState) =>
   Object.values(state.cart.items).reduce((acc, it) => acc + it.qty, 0);
 
 export const selectCartSubtotal = (state: RootState) =>
-  Object.values(state.cart.items).reduce((sum, it) => {
-    const unit = getFinalPrice(it.price, it.discountPercentage);
-    return sum + unit * it.qty;
+  Object.values(state.cart.items).reduce((sum, item) => {
+    const unit = getFinalPrice(item.price, item.discountPercentage);
+    return sum + unit * item.qty;
   }, 0);

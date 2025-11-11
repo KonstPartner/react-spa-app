@@ -19,14 +19,12 @@ const Home = () => {
           size="md"
           onClick={() => navigate('/products')}
         >
-          {
-            <Group>
-              <Text className="a11y-contrast-text" fw={600}>
-                Go to Catalog
-              </Text>
-              <ArrowRight />
-            </Group>
-          }
+          <Group>
+            <Text fw={600}>
+              Go to Catalog
+            </Text>
+            <ArrowRight />
+          </Group>
         </Button>
       </Stack>
     </Center>
