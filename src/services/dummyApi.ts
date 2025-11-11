@@ -1,11 +1,11 @@
-import { Product, ProductsResponse } from '@features/products/model';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import { Product, ProductsResponse } from '@features/products/model';
 import {
   DUMMY_API_BASE_URL,
   DUMMY_API_PRODUCTS_PATH,
   getProductsEndpointWithQuery,
-} from '@/constants';
+} from '@constants';
 
 export const dummyApi = createApi({
   reducerPath: 'dummyApi',
@@ -22,7 +22,9 @@ export const dummyApi = createApi({
         if (!currentCache) {
           return newData;
         }
-        const existingIds = new Set(currentCache.products.map((p) => p.id));
+        const existingIds = new Set(
+          currentCache.products.map((product) => product.id)
+        );
         const merged = [
           ...currentCache.products,
           ...newData.products.filter((p) => !existingIds.has(p.id)),

@@ -1,18 +1,47 @@
-import classes from '@entities/cart/CartItemCard.module.css';
+import { CSSProperties } from 'react';
+import {
+  Box,
+  Card,
+  Group,
+  Stack,
+  Text,
+  Title,
+  useMantineTheme,
+} from '@mantine/core';
+import { Link } from 'react-router-dom';
+
 import { CartItem } from '@features/cart/model';
 import { CartWidget } from '@features/cart/ui';
-import { Box, Card, Group, Image, Stack, Text, Title } from '@mantine/core';
-import { getFinalPrice } from '@shared/utils';
+import { LazyImage } from '@entities/shared/ui';
+import { useSchemeTokens } from '@hooks';
+import { getColor, getFinalPrice } from '@utils';
+
+import classes from './CartItemCard.module.css';
 
 const CartItemCard = ({
   item,
-  isPriority,
+  itemLink,
 }: {
   item: CartItem;
-  isPriority?: boolean;
+  itemLink: string;
 }) => {
-  const { title, category, price, discountPercentage, rating, thumbnail, qty } =
-    item;
+  const { link } = useSchemeTokens();
+  const theme = useMantineTheme();
+
+  const colorVars = {
+    '--link-color': getColor(theme, link),
+  } as CSSProperties;
+  const IMG_SIZE = 96;
+  const {
+    id,
+    title,
+    category,
+    price,
+    discountPercentage,
+    rating,
+    thumbnail,
+    qty,
+  } = item;
   const unit = getFinalPrice(price, discountPercentage);
   const total = (unit * qty).toFixed(2);
 
@@ -21,21 +50,26 @@ const CartItemCard = ({
       <Group justify="space-between" gap="lg">
         <Group>
           <Box w={{ base: 250, xs: 96 }}>
-            <Image
-              width={96}
-              style={{ aspectRatio: '1 / 1' }}
-              src={thumbnail}
-              alt={title}
-              radius="md"
-              loading={isPriority ? 'eager' : 'lazy'}
-              fetchPriority={isPriority ? 'high' : 'auto'}
-              decoding="async"
-            />
+            <Link to={itemLink}>
+              <LazyImage
+                src={thumbnail}
+                alt={title}
+                radius="md"
+                width={IMG_SIZE}
+                height={IMG_SIZE}
+              />
+            </Link>
           </Box>
 
           <Stack gap={4}>
             <Title order={4} lineClamp={2}>
-              {title}
+              <Link
+                style={colorVars}
+                className={`${classes.link}`}
+                to={`/products/${id}`}
+              >
+                {title}
+              </Link>
             </Title>
             <Text size="sm" tt="capitalize">
               {category}

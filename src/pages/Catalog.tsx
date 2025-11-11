@@ -1,9 +1,10 @@
-import { Products } from '@features/products/ui';
 import { Group, Stack } from '@mantine/core';
+
+import { Products } from '@features/products/ui';
 
 const Catalog = () => {
   return (
-    <Stack>
+    <Stack py="lg">
       <h1>Catalog</h1>
       <Group justify="center">
         <Products />

@@ -1,12 +1,13 @@
 import js from '@eslint/js';
-import globals from 'globals';
-import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+import prettier from 'eslint-config-prettier';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import prettier from 'eslint-config-prettier';
+import unusedImports from 'eslint-plugin-unused-imports';
+import globals from 'globals';
 
 export default [
   {
@@ -27,6 +28,7 @@ export default [
       'react-hooks': reactHooks,
       'jsx-a11y': jsxA11y,
       'simple-import-sort': simpleImportSort,
+      'unused-imports': unusedImports,
     },
     settings: { react: { version: 'detect' } },
     rules: {
@@ -37,10 +39,31 @@ export default [
       'react/react-in-jsx-scope': 'off',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      'simple-import-sort/imports': 'warn',
+      'unused-imports/no-unused-imports': 'warn',
+      'simple-import-sort/imports': [
+        'warn',
+        {
+          groups: [
+            ['^\\u0000'],
+            ['^react$', '^react-dom$', '^@?\\w'],
+            [
+              '^@app(/.*)?$',
+              '^@features(/.*)?$',
+              '^@entities(/.*)?$',
+              '^@hooks(/.*)?$',
+              '^@utils(/.*)?$',
+              '^@pages(/.*)?$',
+              '^@services(/.*)?$',
+              '^@constants(/.*)?$',
+            ],
+            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+            ['^\\./(?!/?$)', '^\\./?$'],
+          ],
+        },
+      ],
       'simple-import-sort/exports': 'warn',
       ...prettier.rules,
-      'no-unused-vars': [
+      '@typescript-eslint/no-unused-vars': [
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],

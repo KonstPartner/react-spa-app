@@ -1,8 +1,9 @@
-import { useAppDispatch } from '@app/hooks';
-import { addItem } from '@features/cart/model/slice';
-import { CartItem } from '@features/cart/model/types';
 import { Button, Tooltip } from '@mantine/core';
 import { ShoppingCart } from 'lucide-react';
+
+import { addItem } from '@features/cart/model/slice';
+import { CartItem } from '@features/cart/model/types';
+import { useAppDispatch } from '@hooks';
 
 const AddToCardButton = ({ item }: { item: Omit<CartItem, 'qty'> }) => {
   const dispatch = useAppDispatch();

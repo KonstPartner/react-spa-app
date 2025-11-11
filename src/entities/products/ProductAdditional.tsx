@@ -1,5 +1,6 @@
-import { Product } from '@features/products/model';
 import { List, Paper, rem, Title } from '@mantine/core';
+
+import { Product } from '@features/products/model';
 
 const ProductAdditional = ({ product }: { product: Product }) => {
   const { warrantyInformation, shippingInformation, returnPolicy } = product;

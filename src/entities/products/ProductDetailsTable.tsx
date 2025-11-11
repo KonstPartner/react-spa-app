@@ -1,5 +1,6 @@
-import { Product } from '@features/products/model/types';
 import { Paper, Table, Title } from '@mantine/core';
+
+import { Product } from '@features/products/model/types';
 
 const ProductDetailsTable = ({ product }: { product: Product }) => {
   const { brand, category, weight, dimensions, meta } = product;

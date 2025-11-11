@@ -1,7 +1,7 @@
-import { cartReducer } from '@features/cart/model';
 import { configureStore } from '@reduxjs/toolkit';
 
-import { dummyApi } from '@/services';
+import { cartReducer } from '@features/cart/model';
+import { dummyApi } from '@services';
 
 export const store = configureStore({
   reducer: {

@@ -1,16 +1,13 @@
-import { ReviewCard } from '@entities/reviews';
-import { Divider, Stack } from '@mantine/core';
+import { Stack } from '@mantine/core';
 
-import { Review } from '@/features/reviews/modal';
+import { Review } from '@features/reviews/modal';
+import { ReviewCard } from '@entities/reviews';
 
 const ReviewList = ({ reviews }: { reviews: Review[] }) => {
   return (
-    <Stack gap="md">
+    <Stack gap="lg">
       {reviews.map((review, index) => (
-        <div key={index}>
-          <ReviewCard review={review} />
-          {index !== reviews.length - 1 && <Divider my="sm" />}
-        </div>
+        <ReviewCard key={index} review={review} />
       ))}
     </Stack>
   );

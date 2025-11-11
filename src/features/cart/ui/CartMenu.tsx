@@ -1,12 +1,13 @@
-import { useAppDispatch, useAppSelector } from '@app/hooks';
-import { CartItemCard } from '@entities/cart';
+import { Box, Button, Divider, Group, Stack, Text, Title } from '@mantine/core';
+
 import {
   selectCartItems,
   selectCartSubtotal,
   selectCartTotalCount,
 } from '@features/cart/model/selectors';
 import { clearCart } from '@features/cart/model/slice';
-import { Box, Button, Divider, Group, Stack, Text, Title } from '@mantine/core';
+import { CartItemCard } from '@entities/cart';
+import { useAppDispatch, useAppSelector } from '@hooks';
 
 const CartMenu = () => {
   const dispatch = useAppDispatch();
@@ -28,8 +29,12 @@ const CartMenu = () => {
       </Group>
 
       <Stack gap="md">
-        {items.map((it, i) => (
-          <CartItemCard key={it.id} item={it} isPriority={i === 0} />
+        {items.map((item) => (
+          <CartItemCard
+            key={item.id}
+            item={item}
+            itemLink={`/products/${item.id}`}
+          />
         ))}
       </Stack>
 

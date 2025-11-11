@@ -2,7 +2,7 @@ import { Divider, Stack, Text } from '@mantine/core';
 
 const About = () => {
   return (
-    <Stack gap="lg">
+    <Stack py="lg" gap="lg">
       <Stack gap={4}>
         <h1>About Shop</h1>
         <Text size="lg">Quality products. Fair prices. Fast delivery.</Text>

@@ -1,12 +1,13 @@
+import { Box, Divider, Grid, Group, Image, Paper, Stack } from '@mantine/core';
+
+import { CartWidget } from '@features/cart/ui';
+import type { Product } from '@features/products/model';
+import { Reviews } from '@features/reviews/ui';
 import {
   ProductAdditional,
   ProductDetailsTable,
   ProductInfo,
 } from '@entities/products';
-import { CartWidget } from '@features/cart/ui';
-import type { Product } from '@features/products/model';
-import { Reviews } from '@features/reviews/ui';
-import { Box, Divider, Grid, Group, Image, Paper, Stack } from '@mantine/core';
 
 const ProductDetails = ({ product }: { product: Product }) => {
   const { title, thumbnail, reviews } = product;

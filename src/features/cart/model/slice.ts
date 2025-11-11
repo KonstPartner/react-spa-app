@@ -1,5 +1,6 @@
-import type { CartItem, CartState } from '@features/cart/model';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import type { CartItem, CartState } from '@features/cart/model';
 
 const STORAGE_KEY = 'cart';
 

@@ -1,24 +1,17 @@
+import { Badge, Box, Card, Group, Rating, Stack, Text } from '@mantine/core';
+
 import type { Product } from '@features/products/model';
-import {
-  Badge,
-  Box,
-  Card,
-  Group,
-  Image,
-  Rating,
-  Stack,
-  Text,
-} from '@mantine/core';
-import { getFinalPrice } from '@shared/utils';
+import { LazyImage } from '@entities/shared/ui';
+import { getFinalPrice } from '@utils';
+
+const IMG_SIZE = 242;
 
 const ProductCard = ({
   product,
   onClick,
-  isPriority,
 }: {
   product: Product;
-  onClick?: () => void;
-  isPriority?: boolean;
+  onClick: () => void;
 }) => {
   const { title, category, price, discountPercentage, rating, thumbnail } =
     product;
@@ -31,30 +24,23 @@ const ProductCard = ({
       radius="md"
       shadow="xs"
       onClick={onClick}
-      style={{ cursor: onClick ? 'pointer' : 'default' }}
+      style={{ cursor: 'pointer' }}
     >
       <Stack justify="space-between">
-        <Group>
-          <Box w={{ sm: '100%' }} mx="auto">
-            <Image
-              component="img"
-              width={242}
-              height={242}
-              style={{ aspectRatio: '1 / 1' }}
+        <Stack>
+          <Box w={{ sm: '100%' }}>
+            <LazyImage
               src={thumbnail}
               alt={title}
-              radius="sm"
-              fit="cover"
-              loading={isPriority ? 'eager' : 'lazy'}
-              fetchPriority={isPriority ? 'high' : 'auto'}
-              decoding="async"
+              width={IMG_SIZE}
+              height={IMG_SIZE}
             />
           </Box>
 
           <Text fw={600} h={50} lineClamp={2}>
             {title}
           </Text>
-        </Group>
+        </Stack>
 
         <Stack>
           <Badge variant="light" size="sm" tt="capitalize">

@@ -1,15 +1,15 @@
-import { selectCartItems } from '@features/cart/model';
-import { CartMenu } from '@features/cart/ui';
 import { Stack, Text } from '@mantine/core';
 
-import { useAppSelector } from '@/app';
+import { selectCartItems } from '@features/cart/model';
+import { CartMenu } from '@features/cart/ui';
+import { useAppSelector } from '@hooks';
 
 const Cart = () => {
   const items = useAppSelector(selectCartItems);
 
   if (items.length === 0) {
     return (
-      <Stack>
+      <Stack py="lg">
         <h1>Cart</h1>
         <Stack align="center">
           <Text>Your cart is empty.</Text>

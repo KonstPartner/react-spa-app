@@ -4,6 +4,10 @@
   gap: 30px;
 }
 
+.link:hover {
+  border-bottom: 2px solid var(--link-color);
+}
+
 @media (max-width: 900px) {
   .CartItemCard {
     width: 100%;

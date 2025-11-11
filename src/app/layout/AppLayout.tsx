@@ -1,7 +1,9 @@
-import { Footer, Header, SideNav } from '@app/layout';
 import { AppShell, Container } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Outlet } from 'react-router-dom';
+
+import { Footer } from '@entities/footer';
+import { Header, SideNav } from '@entities/header';
 
 const AppLayout = () => {
   const [opened, { toggle, close }] = useDisclosure(false);
@@ -9,9 +11,10 @@ const AppLayout = () => {
   return (
     <AppShell
       header={{ height: 64 }}
+      footer={{ height: 54 }}
       navbar={{
         width: 280,
-        breakpoint: 'sm',
+        breakpoint: 'xs',
         collapsed: { mobile: !opened, desktop: !opened },
       }}
     >
@@ -23,8 +26,8 @@ const AppLayout = () => {
         <SideNav onNavigate={close} />
       </AppShell.Navbar>
 
-      <AppShell.Main pb={50}>
-        <Container size="lg" py="lg">
+      <AppShell.Main>
+        <Container size="lg">
           <Outlet />
         </Container>
       </AppShell.Main>

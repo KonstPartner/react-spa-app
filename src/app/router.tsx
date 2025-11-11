@@ -1,13 +1,14 @@
-import { AppLayout } from '@app/layout';
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const Home = lazy(() => import('@/pages/Home'));
-const Catalog = lazy(() => import('@/pages/Catalog'));
-const Product = lazy(() => import('@/pages/Product'));
-const Cart = lazy(() => import('@/pages/Cart'));
-const About = lazy(() => import('@/pages/About'));
-const Error = lazy(() => import('@/pages/Error'));
+import { AppLayout } from '@app/layout';
+
+const Home = lazy(() => import('@pages/Home'));
+const Catalog = lazy(() => import('@pages/Catalog'));
+const Product = lazy(() => import('@pages/Product'));
+const Cart = lazy(() => import('@pages/Cart'));
+const About = lazy(() => import('@pages/About'));
+const Error = lazy(() => import('@pages/Error'));
 
 const router = createBrowserRouter(
   [
