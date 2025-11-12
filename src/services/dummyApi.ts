@@ -22,14 +22,14 @@ export const dummyApi = createApi({
         if (!currentCache) {
           return newData;
         }
+
         const existingIds = new Set(
           currentCache.products.map((product) => product.id)
         );
-        const merged = [
+        currentCache.products = [
           ...currentCache.products,
           ...newData.products.filter((p) => !existingIds.has(p.id)),
         ];
-        currentCache.products = merged;
         currentCache.total = newData.total;
         currentCache.skip = newData.skip;
         currentCache.limit = newData.limit;

@@ -8,7 +8,7 @@ const Catalog = lazy(() => import('@pages/Catalog'));
 const Product = lazy(() => import('@pages/Product'));
 const Cart = lazy(() => import('@pages/Cart'));
 const About = lazy(() => import('@pages/About'));
-const Error = lazy(() => import('@pages/Error'));
+const ErrorPage = lazy(() => import('@pages/ErrorPage'));
 
 const router = createBrowserRouter(
   [
@@ -20,7 +20,7 @@ const router = createBrowserRouter(
         { path: 'products/:id', element: <Product /> },
         { path: 'cart', element: <Cart /> },
         { path: 'about', element: <About /> },
-        { path: '*', element: <Error /> },
+        { path: '*', element: <ErrorPage /> },
       ],
     },
   ],

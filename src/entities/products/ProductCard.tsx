@@ -1,4 +1,5 @@
 import { Badge, Box, Card, Group, Rating, Stack, Text } from '@mantine/core';
+import { useNavigate } from 'react-router-dom';
 
 import type { Product } from '@features/products/model';
 import { LazyImage } from '@entities/shared/ui';
@@ -6,14 +7,10 @@ import { getFinalPrice } from '@utils';
 
 const IMG_SIZE = 242;
 
-const ProductCard = ({
-  product,
-  onClick,
-}: {
-  product: Product;
-  onClick: () => void;
-}) => {
-  const { title, category, price, discountPercentage, rating, thumbnail } =
+const ProductCard = ({ product }: { product: Product }) => {
+  const navigate = useNavigate();
+
+  const { id, title, category, price, discountPercentage, rating, thumbnail } =
     product;
   const hasDiscount = !!discountPercentage && discountPercentage > 0;
   const finalPrice = getFinalPrice(price, discountPercentage);
@@ -23,7 +20,7 @@ const ProductCard = ({
       withBorder
       radius="md"
       shadow="xs"
-      onClick={onClick}
+      onClick={() => navigate(`/products/${id}`)}
       style={{ cursor: 'pointer' }}
     >
       <Stack justify="space-between">
@@ -55,7 +52,7 @@ const ProductCard = ({
                 </Text>
                 <Text fw={700}>${finalPrice.toFixed(2)}</Text>
                 <Badge color="red" variant="filled" size="sm">
-                  -{discountPercentage!.toFixed(0)}%
+                  -{discountPercentage.toFixed(0)}%
                 </Badge>
               </>
             ) : (

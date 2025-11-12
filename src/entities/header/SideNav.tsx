@@ -6,10 +6,10 @@ import { useSchemeTokens } from '@hooks';
 import { NAV_LINKS } from '@constants';
 
 const SideNav = ({ onNavigate }: { onNavigate: () => void }) => {
-  const { headerBg } = useSchemeTokens();
+  const { primary } = useSchemeTokens();
 
   return (
-    <ScrollArea h="100dvh" p="md" bg={headerBg} scrollHideDelay={250}>
+    <ScrollArea h="100dvh" p="md" bg={primary} scrollHideDelay={250}>
       <Stack align="center" mx="auto" miw={200} w="70%" aria-label="Main">
         <ToggleTheme aria-label="Toggle color scheme" />
 

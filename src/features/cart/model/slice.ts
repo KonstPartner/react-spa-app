@@ -54,7 +54,7 @@ const cartSlice = createSlice({
       if (qty <= 0) {
         delete state.items[id];
       } else if (state.items[id]) {
-        state.items[id]!.qty = qty;
+        state.items[id].qty = qty;
       }
       saveCart(state);
     },

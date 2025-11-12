@@ -6,7 +6,7 @@ import { useSchemeTokens } from '@hooks';
 
 const Home = () => {
   const navigate = useNavigate();
-  const { headerBg, text } = useSchemeTokens();
+  const { primary, text } = useSchemeTokens();
 
   return (
     <Center mih="calc(100dvh - var(--app-shell-header-offset) - var(--app-shell-footer-offset))">
@@ -14,15 +14,13 @@ const Home = () => {
         <h1>Welcome to Goods Shop</h1>
         <Text size="lg">Your favorite products, delivered fast and easy.</Text>
         <Button
-          bg={headerBg}
+          bg={primary}
           c={text}
           size="md"
           onClick={() => navigate('/products')}
         >
           <Group>
-            <Text fw={600}>
-              Go to Catalog
-            </Text>
+            <Text fw={600}>Go to Catalog</Text>
             <ArrowRight />
           </Group>
         </Button>

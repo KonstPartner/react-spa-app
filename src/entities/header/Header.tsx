@@ -7,11 +7,17 @@ import { NavItem } from '@entities/header';
 import { useSchemeTokens } from '@hooks';
 import { NAV_LINKS } from '@constants';
 
-const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
-  const { headerBg, text } = useSchemeTokens();
+const Header = ({
+  onBurgerClick,
+  isBurgerExpanded,
+}: {
+  onBurgerClick: () => void;
+  isBurgerExpanded: boolean;
+}) => {
+  const { primary, text } = useSchemeTokens();
 
   return (
-    <Paper shadow="sm" radius={0} bg={headerBg}>
+    <Paper shadow="sm" radius={0} bg={primary}>
       <Container py="sm" size="lg">
         <Group justify="space-between" align="center">
           <Link to="/" aria-label="Go to homepage">
@@ -31,7 +37,7 @@ const Header = ({ onBurgerClick }: { onBurgerClick: () => void }) => {
               hiddenFrom="sm"
               aria-label="Open navigation menu"
               aria-controls="main-nav"
-              aria-expanded={false}
+              aria-expanded={isBurgerExpanded}
             />
 
             <Group visibleFrom="sm" aria-label="Main" component="ul" gap="lg">
