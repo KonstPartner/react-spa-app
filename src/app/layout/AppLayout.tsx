@@ -14,12 +14,12 @@ const AppLayout = () => {
       footer={{ height: 54 }}
       navbar={{
         width: 280,
-        breakpoint: 'xs',
+        breakpoint: 'sm',
         collapsed: { mobile: !opened, desktop: !opened },
       }}
     >
       <AppShell.Header>
-        <Header onBurgerClick={toggle} />
+        <Header isBurgerExpanded={opened} onBurgerClick={toggle} />
       </AppShell.Header>
 
       <AppShell.Navbar hiddenFrom="sm">

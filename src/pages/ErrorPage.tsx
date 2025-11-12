@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { useSchemeTokens } from '@hooks';
 
-const Error = () => {
+const ErrorPage = () => {
   const navigate = useNavigate();
-  const { headerBg, text } = useSchemeTokens();
+  const { primary, text } = useSchemeTokens();
 
   return (
     <Center mih="calc(100dvh - var(--app-shell-header-offset) - var(--app-shell-footer-offset))">
@@ -14,12 +14,7 @@ const Error = () => {
           <h1>Error</h1>
           <Title order={2}>Oops! Something went wrong.</Title>
           <Text>Page not found or an unexpected error occurred.</Text>
-          <Button
-            bg={headerBg}
-            c={text}
-            onClick={() => navigate('/')}
-            size="md"
-          >
+          <Button bg={primary} c={text} onClick={() => navigate('/')} size="md">
             Go back home
           </Button>
         </Stack>
@@ -28,4 +23,4 @@ const Error = () => {
   );
 };
 
-export default Error;
+export default ErrorPage;

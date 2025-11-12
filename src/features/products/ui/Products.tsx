@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Text } from '@mantine/core';
+import { Loader, Stack, Text } from '@mantine/core';
 import { useInView } from 'react-intersection-observer';
 
 import { ProductsListSection } from '@features/products/ui';
@@ -36,10 +36,18 @@ const Products = () => {
     return <Text>Failed to load products</Text>;
   }
 
+  if (isLoading && products.length === 0) {
+    return (
+      <Stack align="center" py="xl">
+        <Loader />
+        <Text>Loading catalog…</Text>
+      </Stack>
+    );
+  }
+
   return (
     <ProductsListSection
       products={products}
-      isLoading={isLoading}
       isFetching={isFetching}
       canLoadMore={canLoadMore}
       sentinelRef={sentinelRef}

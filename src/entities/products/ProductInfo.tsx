@@ -55,7 +55,7 @@ const ProductInfo = ({ productInfo }: { productInfo: Product }) => {
         <Title order={3}>${finalPrice.toFixed(2)}</Title>
         {hasDiscount && (
           <Badge color="red" variant="filled" size="sm">
-            -{Math.round(discountPercentage!)}%
+            -{Math.round(discountPercentage)}%
           </Badge>
         )}
       </Group>
