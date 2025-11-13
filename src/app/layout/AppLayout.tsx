@@ -19,7 +19,7 @@ const AppLayout = () => {
       }}
     >
       <AppShell.Header>
-        <Header isBurgerExpanded={opened} onBurgerClick={toggle} />
+        <Header isNavbarOpen={opened} onBurgerClick={toggle} />
       </AppShell.Header>
 
       <AppShell.Navbar hiddenFrom="sm">

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useSchemeTokens } from '@hooks';
 
-const ErrorPage = () => {
+const NotFound = () => {
   const navigate = useNavigate();
   const { primary, text } = useSchemeTokens();
 
@@ -23,4 +23,4 @@ const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export default NotFound;
