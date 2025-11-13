@@ -9,10 +9,10 @@ import { NAV_LINKS } from '@constants';
 
 const Header = ({
   onBurgerClick,
-  isBurgerExpanded,
+  isNavbarOpen,
 }: {
   onBurgerClick: () => void;
-  isBurgerExpanded: boolean;
+  isNavbarOpen: boolean;
 }) => {
   const { primary, text } = useSchemeTokens();
 
@@ -37,7 +37,7 @@ const Header = ({
               hiddenFrom="sm"
               aria-label="Open navigation menu"
               aria-controls="main-nav"
-              aria-expanded={isBurgerExpanded}
+              aria-expanded={isNavbarOpen}
             />
 
             <Group visibleFrom="sm" aria-label="Main" component="ul" gap="lg">
