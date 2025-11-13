@@ -57,6 +57,7 @@ const CartItemCard = ({
                 radius="md"
                 width={IMG_SIZE}
                 height={IMG_SIZE}
+                fit="contain"
               />
             </Link>
           </Box>
